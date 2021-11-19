@@ -1,0 +1,4 @@
+[submodule "src/_core"]
+	path = src/_core
+	url = https://github.com/Oneclickdys/i2c_frontoffice_core.git
+    branch = tangerine
