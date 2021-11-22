@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "sonarsource.sonarlint-vscode",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "gruntfuggly.todo-tree",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "orta.vscode-jest"
+  ]
+}
