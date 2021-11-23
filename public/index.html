@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" translate="no">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/app/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="description" content="education technology made with love by oneclick.es" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -24,11 +20,25 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>%REACT_APP_WEBSITE_NAME%</title>
+    <!-- SPLASH SCREEN-->
+    <link rel="stylesheet" id="layout-styles-anchor" href="%PUBLIC_URL%/css/splash-screen.css" />
+    <!--  Setup `default`, `es2015`, `es2016`, `es2017`, and `Intl` polyfills from https://cdn.polyfill.io/v3/url-builder/ -->
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=es2017%2Cdefault%2Ces2015%2Ces2016%2CIntl"></script>
+    <script src="%PUBLIC_URL%/lib/webviewer.min.js"></script>
+    <link rel="stylesheet" href="%PUBLIC_URL%/lib/ocvc_initializer_pdftron.css" />
+    <script src="%PUBLIC_URL%/lib/ocvc_initializer_pdftron.js"></script>
+    <script src="%PUBLIC_URL%/lib/xlsx.full.min.js"></script>
+    <script src="%PUBLIC_URL%/lib/FileSaver.min.js"></script>
+    <!-- LEMONADE: polyfill para error de globalThis de safari-->
+    <script src="//unpkg.com/@ungap/global-this"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="splash-screen" class="kt-splash-screen"></div>
+    <div id="layout-scripts-anchor"></div>
+    <div id="container_pfdtron" class="ocvc_pdftron ocvc_pdftron_hidden show_ftd"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +49,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
   </body>
 </html>

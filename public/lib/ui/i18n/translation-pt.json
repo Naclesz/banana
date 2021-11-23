@@ -1,0 +1,198 @@
+{
+  "action": {
+    "apply": "Aplique",
+    "applyAll": "Aplicar tudo",
+    "cancel": "Cancelar",
+    "clear": "Limpar",
+    "close": "Fechar",
+    "comment": "Comente",
+    "copy": "Cópia",
+    "delete": "Remover",
+    "download": "Baixar",
+    "edit": "Editar",
+    "enterFullscreen": "Tela cheia",
+    "exitFullscreen": "Sair da tela cheia",
+    "fit": "Em forma",
+    "fitToPage": "Ajustar à página",
+    "fitToWidth": "Ajustar à largura",
+    "openFile": "Abrir arquivo",
+    "print": "Impressão",
+    "ok": "OK",
+    "reply": "Resposta",
+    "rotate": "Rodar",
+    "rotateClockwise": "Sentido horário",
+    "rotateCounterClockwise": "Sentido anti-horário",
+    "save": "Salve",
+    "create": "Criar",
+    "showMoreResults": "Mostrar mais resultados",
+    "saveSignature": "Salvar assinatura",
+    "sign": "Placa",
+    "style": "Estilo",
+    "submit": "Enviar",
+    "zoom": "Zoom",
+    "zoomIn": "Mais Zoom",
+    "zoomOut": "Reduzir o zoom"
+  },
+  "annotation": {
+    "areaMeasurement": "Medição de área",
+    "arrow": "Seta",
+    "callout": "Chamar",
+    "caret": "Caret",
+    "distanceMeasurement": "Medição de distância",
+    "ellipse": "Elipse",
+    "freehand": "Mão livre",
+    "freehand2": "Mão livre",
+    "freetext": "Texto livre",
+    "freetext2": "Texto livre",
+    "highlight": "Realçar",
+    "highlight2": "Realçar",
+    "line": "Linha",
+    "perimeterMeasurement": "Medição de perímetro",
+    "polygon": "Polígono",
+    "polygonCloud": "Nuvem",
+    "polyline": "Polilinha",
+    "rectangle": "Retângulo",
+    "redact": "Redigir",
+    "signature": "Assinatura",
+    "squiggly": "Squiggly",
+    "stamp": "Carimbo",
+    "stickyNote": "Comente",
+    "strikeout": "Strikeout",
+    "underline": "Sublinhado",
+    "custom": "Personalizados"
+  },
+  "component": {
+    "freehandToolsButton": "Ferramentas à mão livre",
+    "leftPanel": "Painel",
+    "searchOverlay": "Procurar",
+    "menuOverlay": "Cardápio",
+    "miscToolsButton": "Ferramentas diversas",
+    "notesPanel": "Notas",
+    "outlinesPanel": "Esboços",
+    "shapeToolsButton": "Ferramentas de forma",
+    "textToolsButton": "Ferramentas de texto",
+    "thumbnailsPanel": "Miniaturas",
+    "toolsButton": "Ferramentas",
+    "redaction": "Redação",
+    "viewControlsOverlay": "Ver controles",
+    "measurementToolsButton": "Ferramentas de medição"
+  },
+  "message": {
+    "badDocument": "Falha ao carregar o documento. O documento está corrompido ou não é válido.",
+    "customPrintPlaceholder": "e.g. 3, 4-10",
+    "encryptedAttemptsExceeded": "Falha ao carregar o documento criptografado. Muitas tentativas.",
+    "encryptedUserCancelled": "Falha ao carregar o documento criptografado. Entrada de senha cancelada.",
+    "enterPassword": "Este documento é protegido por senha. Por favor insira uma senha",
+    "incorrectPassword": "Senha incorreta, tentativas restantes: {{ remainingAttempts }}",
+    "noAnnotations": "Este documento não possui anotações.",
+    "noOutlines": "Este documento não tem esboço.",
+    "noResults": "Nenhum resultado encontrado.",
+    "notSupported": "Esse tipo de arquivo não é suportado.",
+    "passwordRequired": "Senha requerida",
+    "preparingToPrint": "Preparando para imprimir...",
+    "printTotalPageCount": "{{count}} página",
+    "printTotalPageCount_plural": "{{count}} Páginas",
+    "processing": "Em processamento...",
+    "searching": "Procurando...",
+    "searchPlaceholder": "Pesquisar comentários...",
+    "signHere": "Assine aqui",
+    "insertTextHere": "Introduzir texto aqui"
+  },
+  "option": {
+    "annotationColor": {
+      "StrokeColor": "Cor da borda",
+      "FillColor": "Cor de preenchimento",
+      "TextColor": "Cor do texto"
+    },
+    "displayMode": {
+      "layout": "Layout",
+      "pageTransition": "Transição de página"
+    },
+    "layout": {
+      "cover": "Tampa",
+      "double": "Dobro",
+      "single": "Único"
+    },
+    "notesPanel": {
+      "orderPosition": "Posição",
+      "orderTime": "Tempo",
+      "separator": {
+        "today": "Hoje",
+        "yesterday": "Ontem"
+      }
+    },
+    "pageTransition": {
+      "continuous": "Contínua",
+      "default": "Página por página"
+    },
+    "print": {
+      "all": "Todas",
+      "current": "Atual",
+      "pages": "Páginas",
+      "includeComments": "Incluir comentários"
+    },
+    "redaction": {
+      "markForRedaction": "Marcar para redação",
+      "warningPopupMessage": "Esta ação removerá permanentemente todos os itens selecionados para edição. Não pode ser desfeito.",
+      "warningPopupTitle": "Aplicar redação"
+    },
+    "searchPanel": {
+      "caseSensitive": "Case sensitive",
+      "wholeWordOnly": "Palavra inteira"
+    },
+    "signatureOverlay": {
+      "addSignature": "Adicione uma assinatura"
+    },
+    "measurementOverlay": {
+      "scale": "Relação de escala",
+      "angle": "Ângulo",
+      "distance": "Distância",
+      "perimeter": "Perímetro",
+      "area": "Área",
+      "distanceMeasurement": "Medição de Distância",
+      "perimeterMeasurement": "Medição de perímetro",
+      "areaMeasurement": "Medição de área"
+    },
+    "measurementOption": {
+      "scale": "Escala"
+    },
+    "slider": {
+      "opacity": "Opacidade",
+      "thickness": "Espessura",
+      "text": "Tamanho do texto"
+    },
+    "shared": {
+      "page": "Página",
+      "precision": "Precisão"
+    }
+  },
+  "shortcut": {
+    "arrow": "(A)",
+    "callout": "(C)",
+    "copy": "(Ctrl C)",
+    "delete": "(Del)",
+    "ellipse": "(O)",
+    "freehand": "(F)",
+    "freetext": "(T)",
+    "highlight": "(H)",
+    "line": "(L)",
+    "pan": "(P)",
+    "rectangle": "(R)",
+    "rotateClockwise": "(Ctrl Shift +)",
+    "rotateCounterClockwise": "(Ctrl Shift -)",
+    "select": "(Esc)",
+    "signature": "(S)",
+    "squiggly": "(G)",
+    "stamp": "(I)",
+    "stickyNote": "(N)",
+    "strikeout": "(K)",
+    "underline": "(U)",
+    "zoomIn": "(Ctrl +)",
+    "zoomOut": "(Ctrl -)"
+  },
+  "tool": {
+    "pan": "Pan",
+    "select": "Selecione",
+    "Marquee": "Marquee Zoom"
+  }
+}
