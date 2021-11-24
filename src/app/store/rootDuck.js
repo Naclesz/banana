@@ -20,5 +20,13 @@ const reducers = {
 export const rootReducer = combineReducers({ ...reducers });
 
 export function* rootSaga() {
-  yield all([coreEntities.auth.saga()]);
+  yield all([
+    coreEntities.auth.saga(),
+    coreEntities.educationLevels.saga(),
+    coreEntities.courses.saga(),
+    coreEntities.groups.saga(),
+    coreEntities.tasks.saga(),
+    coreEntities.calendars.saga(),
+    coreEntities.notifications.saga(),
+  ]);
 }

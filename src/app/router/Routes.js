@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, withRouter } from 'react-router';
-import { useLastLocation } from 'react-router-last-location';
 import { LayoutContextProvider } from '_core';
 import Auth from '_core/lite/views/AuthView/Auth';
 import MyClassroomsView from '_core/lite/views/MyClassroomsView';
@@ -10,7 +9,6 @@ import * as coreEntities from '_core/store/index';
 import { notificationsTypes } from '_core/utils/notifications';
 
 export const Routes = withRouter(({ history }) => {
-  const lastLocation = useLastLocation();
   const dispatch = useDispatch();
   const { isAuthorized } = useSelector(
     ({ auth }) => ({
@@ -50,6 +48,7 @@ export const Routes = withRouter(({ history }) => {
           ) : (
             <Switch>
               <Redirect exact from="/" to="/home" />
+              <Redirect from="/auth" to={'/home'} />
               <Route path="/home" render={() => <MyClassroomsView />} />
             </Switch>
           )}
