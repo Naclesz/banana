@@ -1,0 +1,33 @@
+$new-course-step-schedule-spaces-title: $main-separator-components;
+$new-course-step-schedule-subtitle-color: $color-label;
+
+.new-course-step-schedule {
+  @extend .grid;
+
+  margin-top: $main-separator-components;
+}
+
+.new-course-step-schedule__title {
+  @extend .title-h3;
+
+  display: block;
+}
+
+.new-course-step-schedule__subtitle {
+  @extend .text-small;
+
+  color: $new-course-step-schedule-subtitle-color;
+  display: block;
+  margin-bottom: $main-separator-components;
+  margin-top: $main-separator-items;
+}
+
+.new-course-step-schedule__form-container {
+  @extend .grid-column;
+
+  padding-bottom: $main-padding-page;
+}
+
+.new-course-step-schedule__form {
+  @include column(12);
+}

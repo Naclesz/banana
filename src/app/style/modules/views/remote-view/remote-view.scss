@@ -1,0 +1,172 @@
+$remote-task-error-text-color: red;
+$remote-task-error-icon-color: red;
+$remote-view-separator-buttons: $main-separator-items;
+$remote-view-separator-icon-tabs: $main-separator-items;
+$remote-view-separator-width-after: 30px;
+$remote-view-option-icon-separator: $main-separator-items;
+$remote-view-option-projecting-text-color: $color-green-01;
+$remote-view-option-projecting-text-separator: $main-separator-items;
+$remote-view-option-projecting-separator: $main-separator-components;
+$remote-view-error-border-radius: $border-radius-05;
+$remote-view-error-height: 295px;
+$remote-view-error-background: $color-white;
+
+.remote-view {
+  // .header-width-tabs__tabs {
+  //   visibility: hidden;
+  // }
+
+  .header-tabs__tab-text-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-tabs__tab-icon {
+    margin-right: $remote-view-separator-icon-tabs;
+  }
+
+  .header-tabs__tab {
+    &:after {
+      bottom: -20px !important;
+      width: $remote-view-separator-width-after !important;
+    }
+  }
+
+  .layout-header__content {
+    padding-bottom: $size-footer-projection-height;
+    overflow-y: auto;
+  }
+}
+
+.remote-view__dialog-tools {
+  .header-width-tabs__tabs {
+    visibility: hidden;
+  }
+}
+
+.remote__tools-card {
+  @extend .card-secondary;
+
+  margin-bottom: $remote-view-separator-buttons;
+
+  .button {
+    margin-top: $remote-view-separator-buttons;
+  }
+}
+
+.remote__tools-card-header {
+  display: flex;
+  align-items: center;
+}
+
+.remote__tools-card-title {
+  @extend .title-h6;
+
+  margin-left: $remote-view-option-icon-separator;
+}
+
+.remote__tools-card-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.remote__tools-card-projecting {
+  display: flex;
+  align-items: center;
+
+  margin-top: $remote-view-option-projecting-separator;
+}
+
+.remote__tools-card-projecting-text {
+  @extend .title-h6;
+
+  color: $remote-view-option-projecting-text-color !important;
+  margin-left: $remote-view-option-projecting-text-separator;
+}
+
+// .remote {
+//   .countdown__cronometer {
+//     position: relative;
+//     top: -30px;
+//     top: -30px; //  el -30px es por que en wrapper-header__children, hay una padding top de 30px
+//   }
+// }
+
+// .remote__projects {
+//   //  92px ocupa el footer y 48 el header
+//   height: calc(calc(var(--vh, 1vh) * 100) - 92px - 48px);
+//   overflow: auto;
+//   position: relative;
+//   top: -30px; //  el -30px es por que en wrapper-header__children, hay una padding top de 30px
+// }
+
+.remote__error-connect-cover {
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: #27282b;
+  opacity: 0.76;
+}
+
+.remote__error-connect {
+  @extend .grid;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  bottom: 0;
+  border-top-left-radius: $remote-view-error-border-radius;
+  border-top-right-radius: $remote-view-error-border-radius;
+  background-color: $remote-view-error-background;
+  height: $remote-view-error-height;
+  padding: $padding-card-default;
+  position: fixed;
+  z-index: $z-index-notifications;
+}
+
+.remote__error-connect-icon {
+  margin: 0 auto;
+  fill: $remote-task-error-icon-color;
+  height: 40px;
+  width: 40px;
+}
+
+.remote__error-connect-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.remote__error-connect-text {
+  color: $remote-task-error-text-color;
+  font-size: 15px;
+  line-height: 26px;
+  margin-top: 20px;
+}
+
+.remote__error-connect-action {
+  @extend .text-link;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  position: absolute;
+  bottom: 20px;
+}
+
+.remote__spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

@@ -1,0 +1,90 @@
+$answer-test-question-footer-padding: $separator-xxl;
+$answer-test-question-overlay-radius: $border-radius-05;
+$answer-test-question-overlay-green: $translucid-green;
+$answer-test-question-overlay-red: $translucid-red;
+$answer-test-question-margin-bottom: 100px;
+
+.answer-test-question {
+  @extend .card-secondary;
+
+  border-radius: $border-radius-05 !important;
+  margin-bottom: $answer-test-question-margin-bottom;
+}
+
+.answer-test-question__wrapper {
+  position: relative;
+}
+
+.answer-test-question__footer {
+  padding-top: $answer-test-question-footer-padding;
+}
+
+.answer-test-question__footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $answer-test-question-footer-padding;
+  margin-top: $answer-test-question-footer-padding;
+}
+
+.answer-test-question__hint {
+  display: flex;
+}
+
+.answer-test-questions__footer-right {
+  display: flex;
+}
+
+.answer-test-questions__validated {
+  display: flex;
+
+  align-items: center;
+}
+
+.answer-test-questions__repeat {
+  margin-right: $answer-test-question-footer-padding;
+}
+
+.answer-test-question__overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  border-radius: $answer-test-question-overlay-radius;
+}
+.answer-test-question__overlay--green {
+  background-color: $answer-test-question-overlay-green;
+}
+
+.answer-test-question__overlay--red {
+  background-color: $answer-test-question-overlay-red;
+}
+
+.lemonade-exercises {
+  .lemo-controls {
+    display: none;
+  }
+  // TODO: after removing controls wrapper in lemonade this style fix is no longer needed to hide the controls buttons wrapper
+  .lemo-controls-wrapper,
+  .lemo-hints-dialog {
+    display: none !important;
+  }
+}
+
+.lemonade-exercises.lemo-without-footer .lemo-controls-wrapper,
+.lemonade-exercises .lemo-hints-dialog {
+  display: flex !important;
+}
+
+.lemonade-exercises.lemonade-exercises__with-controls {
+  .lemo-controls-wrapper,
+  .lemo-hints-dialog {
+    display: flex !important;
+  }
+
+  .lemo-points {
+    display: none !important;
+  }
+}

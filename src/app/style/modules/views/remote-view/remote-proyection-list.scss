@@ -1,0 +1,53 @@
+$project-remote-list-book-height: 147px;
+$project-remote-list-title-color: $color-label;
+$project-remote-list-title-separator: $main-separator-items;
+$project-remote-list-items-separator: $main-separator-items;
+$project-remote-list-items-background: $color-white;
+$project-remote-list-projecting-color: $color-green-01;
+$project-remote-list-projecting-icon-separator: $main-separator-items;
+
+.project-remote-list__title-book {
+  @extend .title-h6;
+
+  color: $project-remote-list-title-color !important;
+  display: block;
+  margin-bottom: $project-remote-list-title-separator;
+}
+
+.project-remote-list__title-section {
+  @extend .label;
+
+  display: block;
+  margin-top: $project-remote-list-title-separator;
+}
+
+.project-remote-list__book {
+  .book-card {
+    height: $project-remote-list-book-height !important;
+  }
+}
+
+.project-remote-list__lesson-item {
+  @extend .card-default-small;
+
+  background: $project-remote-list-items-background;
+  margin-top: $project-remote-list-items-separator;
+  margin-bottom: $project-remote-list-items-separator;
+
+  .lesson-element-item__right {
+    display: none;
+  }
+}
+
+.project-remote-list__projecting {
+  display: flex;
+  align-items: center;
+}
+
+.project-remote-list__projecting-text {
+  @extend .title-h6;
+
+  color: $project-remote-list-projecting-color !important;
+  display: block;
+  margin-left: $project-remote-list-projecting-icon-separator;
+}

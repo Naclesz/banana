@@ -1,0 +1,51 @@
+$assessment-student-result-description-margin: $separator-m;
+$assessment-student-result-feedback-margin: $separator-xxxl;
+$assessment-student-result-title-color: $color-second;
+$assessment-student-result-description-color: $color-gray-11;
+
+.assessment-student-result-header__layout {
+  display: flex;
+}
+
+.assessment-student-result-header__layout-right {
+  flex: 1 1 auto;
+  padding-left: $main-separator-components;
+}
+
+.assessment-student-result-header__layout-right-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.assessment-student-result-header__header-title {
+  @extend .title-h4;
+
+  color: $assessment-student-result-title-color;
+}
+
+.assessment-student-result-header__header-description {
+  @extend .text-small;
+
+  margin-top: $assessment-student-result-description-margin;
+  color: $assessment-student-result-description-color;
+}
+
+.assessment-student-result-header__metadata {
+  display: flex;
+  align-items: center;
+
+  margin-top: $main-separator-components;
+}
+
+.assessment-student-view-header__meta {
+  margin-right: $main-separator-components;
+}
+
+.assessment-student-result-header__feedback {
+  margin-top: $assessment-student-result-feedback-margin;
+
+  textarea {
+    resize: none;
+  }
+}

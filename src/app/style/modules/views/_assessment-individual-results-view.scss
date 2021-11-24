@@ -1,0 +1,151 @@
+$assessment-individual-results-view-text-color: $color-label;
+$assessment-individual-results-view-button-arrow-separator: $main-separator-components;
+$assessment-individual-results-view-button-action-separator: $separator-xxxxl;
+$assessment-individual-results-view-left-separator: $main-separator-components;
+$assessment-individual-results-view-name-separator: $main-separator-items;
+$assessment-individual-results-view-questions-color: $color-label;
+$assessment-individual-results-view-points-width: 110px;
+$assessment-individual-results-view-list-separator: $main-separator-components;
+$input-points-border-radius-big: $border-radius-02;
+
+.assessment-individual-results-view__left {
+  padding-right: $assessment-individual-results-view-left-separator;
+}
+
+.assessment-individual-results-view__avatar {
+  position: relative;
+  z-index: 1;
+
+  .avatar {
+    margin: auto;
+  }
+}
+
+.assessment-individual-results-view__card {
+  @extend .card-secondary;
+
+  position: relative;
+  top: -20px;
+}
+
+.assessment-individual-results-view__name {
+  @extend .title-h4;
+
+  display: block;
+  margin-bottom: $assessment-individual-results-view-name-separator;
+  text-align: center;
+}
+
+.assessment-individual-results-view__text-info {
+  @extend .text-smallest;
+
+  color: $assessment-individual-results-view-text-color;
+  display: block;
+  margin-bottom: $assessment-individual-results-view-name-separator;
+  text-align: center;
+}
+
+.assessment-individual-results-view__feedback {
+  text-align: center;
+}
+
+.assessment-individual-results-view__right {
+  padding-right: $grid-padding-left-xxlarge;
+}
+
+.assessment-individual-results-view__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assessment-individual-results-view__title {
+  @extend .title-h4;
+
+  display: block;
+}
+
+.assessment-individual-results-view__questions {
+  @extend .text-p;
+
+  color: $assessment-individual-results-view-questions-color;
+}
+
+.assessment-individual-results-view__header-points {
+  width: $assessment-individual-results-view-points-width;
+  .input-points {
+    .input-points__input-container {
+      @extend .border-light-black;
+
+      border-radius: $input-points-border-radius-big;
+      padding-right: 8px !important;
+    }
+  }
+}
+
+.assessment-individual-results-view__list-questions {
+  margin-top: $assessment-individual-results-view-list-separator;
+}
+
+.assessment-individual-results-view__footer {
+  @extend .padding-default;
+
+  height: 100%;
+}
+
+.assessment-individual-results-view__footer-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: 100%;
+}
+
+.assessment-individual-results-view__footer-buttons-arrow {
+  display: flex;
+  align-items: center;
+}
+
+.assessment-individual-results-view__footer-button-action {
+  margin-left: $assessment-individual-results-view-button-action-separator;
+}
+
+.assessment-individual-results-view__footer-buttons-arrow {
+  .button {
+    margin-left: $assessment-individual-results-view-button-arrow-separator;
+  }
+}
+
+// Responsive
+
+.assessment-individual-results-view {
+  .layout-calendar__column-1 {
+    width: 275px;
+    padding-right: 0;
+    transition: all 0.2s ease;
+  }
+  .layout-calendar__column-2 {
+    padding-top: 20px;
+    padding-left: calc(275px + 20px);
+    padding-bottom: 20px;
+    width: 100%;
+    transition: all 0.2s ease;
+  }
+}
+
+@media #{$breakpoints-xlarge} {
+  .assessment-individual-results-view {
+    .layout-calendar__column-1 {
+      width: 450px;
+      padding-right: 20px;
+      transition: all 0.2s ease;
+    }
+    .layout-calendar__column-2 {
+      padding-top: 20px;
+      padding-left: calc(450px + 20px);
+      padding-bottom: 20px;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+  }
+}

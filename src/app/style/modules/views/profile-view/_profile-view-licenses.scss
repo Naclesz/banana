@@ -1,0 +1,10 @@
+$profile-view-title-color: $color-label;
+$profile-view-title-separator: $main-separator-items;
+
+.profile-view__title {
+  @extend .text-smallest;
+
+  display: block;
+  color: $profile-view-title-color;
+  margin-bottom: $profile-view-title-separator;
+}

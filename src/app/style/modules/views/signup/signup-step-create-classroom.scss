@@ -1,0 +1,43 @@
+$signup-step-create-classroom-separator-form: $main-separator-components;
+$signup-step-create-classroom-separator-list: $main-separator-components;
+$signup-step-create-classroom-separator-list-title: $main-separator-items;
+$signup-step-create-classroom-background-colum-2: #e6effd;
+
+.signup-step-create-classroom {
+  @extend .grid;
+}
+
+.signup-step-license--create-classroom {
+  .signup__column2 {
+    background: $signup-step-create-classroom-background-colum-2 !important;
+  }
+}
+
+.signup-step-create-classroom__container {
+  @include column--without-gutter(12);
+}
+
+.signup-step-create-classroom__form {
+  margin-top: $signup-step-create-classroom-separator-form;
+}
+
+.signup-step-create-classroom__button-action {
+  margin-top: $signup-step-create-classroom-separator-form;
+}
+
+.signup-step-license__classrooms {
+  margin-top: $signup-step-create-classroom-separator-list;
+}
+
+.signup-step-license__classrooms-length {
+  @extend .title-h6;
+
+  display: block;
+  margin-bottom: $signup-step-create-classroom-separator-list-title;
+}
+
+@media #{$breakpoints-large} {
+  .signup-step-create-classroom__container {
+    @include column--without-gutter(5);
+  }
+}

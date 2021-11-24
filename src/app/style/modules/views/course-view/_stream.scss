@@ -1,0 +1,159 @@
+$stream-space: $separator-l;
+$stream-no-items-color: $color-label2;
+$stream-no-items-separator: $main-separator-components;
+$stream-books-card-width: 48%;
+
+.stream {
+  @extend .grid-column;
+  flex-direction: column-reverse !important;
+  max-width: 100vw;
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 20px;
+    border: 3px solid #faf7f5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+    border: 3px solid #faf7f5;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+  }
+}
+
+.stream__empty-list {
+  text-align: center;
+
+  margin: $stream-space 0;
+}
+
+.stream__empty-list-text {
+  @extend .title-h5;
+
+  color: $stream-no-items-color;
+  display: block;
+  margin-top: $stream-no-items-separator;
+}
+
+.stream__left {
+  @include column(12);
+
+  margin-top: 340px;
+}
+
+.stream__right {
+  @include column(12);
+
+  margin-bottom: $stream-space;
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 285px repeat(2, 400px);
+  overflow-x: auto;
+
+  position: absolute;
+  top: 90px;
+  left: 0;
+  margin-left: 0;
+
+  flex-basis: calc(1200% / 12);
+  width: calc(1200% / 12);
+  padding: 0 5%;
+
+  .card-background {
+    margin-bottom: $stream-space;
+  }
+
+  .card-background-component {
+    max-height: 285px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    .card-background__children {
+      overflow-y: auto;
+    }
+
+    ::-webkit-scrollbar {
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 20px;
+      border: 7px solid #f3eeea;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 20px;
+      border: 7px solid #f3eeea;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+      cursor: pointer;
+    }
+  }
+
+  .stream__books {
+    .book-card {
+      width: $stream-books-card-width;
+      margin-right: calc(50% - #{$stream-books-card-width});
+      margin-bottom: $stream-space;
+      border-radius: 50px;
+    }
+  }
+
+  .mosaic-list__item {
+    margin-bottom: $stream-space;
+  }
+
+  .book-card__image {
+    height: 124px;
+  }
+}
+
+@media #{$breakpoints-large} {
+  .stream {
+    flex-direction: row !important;
+  }
+
+  .stream__left {
+    @include column(8);
+    margin-top: 0;
+  }
+
+  .stream__right {
+    @include column(4);
+    display: block;
+
+    position: relative;
+    top: 0;
+    padding: 0;
+
+    .card-background-component {
+      max-height: none;
+    }
+
+    .mosaic-list__item {
+      margin-bottom: 0;
+    }
+
+    .book-card__image {
+      height: 137px;
+    }
+  }
+}

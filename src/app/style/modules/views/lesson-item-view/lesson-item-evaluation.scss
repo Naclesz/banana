@@ -1,0 +1,55 @@
+$lesson-item-evaluable-icon-separator: $main-separator-items;
+$lesson-item-evaluable-separator: $main-separator-components;
+$lesson-item-evaluable-background-note: $color-background-note;
+$lesson-item-evaluable-border-color-note: $color-border-note;
+
+.lesson-item-evaluable {
+  .accordion__tab {
+    @extend .card-default;
+
+    background: $lesson-item-evaluable-background-note !important;
+    border-color: $lesson-item-evaluable-border-color-note !important;
+  }
+}
+
+.lesson-item-evaluable__accordion-title-container {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+.lesson-item-evaluable__accordion-title {
+  @extend .title-h6;
+
+  margin-left: $lesson-item-evaluable-icon-separator;
+}
+
+.lesson-item-evaluable__note {
+  margin-top: $lesson-item-evaluable-separator;
+  margin-bottom: $lesson-item-evaluable-separator;
+}
+
+.lesson-item-evaluable__children-note-text {
+  @extend .text-small;
+}
+
+.lesson-item-evaluable__duration-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  margin-left: $lesson-item-evaluable-icon-separator;
+  margin-bottom: $lesson-item-evaluable-separator;
+}
+
+.lesson-item-evaluable__duration {
+  @extend .title-h6;
+
+  display: block;
+  margin-right: $lesson-item-evaluable-icon-separator;
+}
+
+.lesson-item-evaluable__exercises-container {
+  @extend .card-background;
+}

@@ -1,0 +1,22 @@
+$signup-step-add-course-separator-form: $main-separator-components;
+$signup-step-add-course-separator-list: $main-separator-components;
+$signup-step-add-course-separator-list-title: $main-separator-items;
+
+.signup-step-add-course {
+  @extend .grid;
+
+  .class-room-card {
+    padding: $signup-step-add-course-separator-list 0;
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+    border-bottom: $border-size-02 solid $color-borders;
+
+    margin-bottom: $signup-step-add-course-separator-list;
+  }
+}
+
+.signup-step-add-course__list {
+  margin: $signup-step-add-course-separator-form 0;
+  padding-bottom: $signup-step-add-course-separator-form;
+}

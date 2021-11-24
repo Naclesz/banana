@@ -1,0 +1,96 @@
+$my-classrooms-view-header-scrolltop-background: $color-gray-12;
+$my-classrooms-view-header-scrolltop-content-top: 140px;
+$my-classrooms-view-enter-class-widht: 400px;
+$my-classrooms-view-enter-class-text-margin: $separator-xl;
+$my-classrooms-view-programs-margin: $separator-xxxl;
+$my-classrooms-view-programs-border-radius: $border-radius-01;
+
+.header-small {
+  z-index: $z-index-header;
+  transition: top 0.8s ease 0s; /* only transition top property */
+  top: -100px;
+  position: fixed;
+  width: 100%;
+}
+
+.my-classrooms-view--scrolldown {
+  .header-small {
+    top: 0;
+  }
+}
+
+.my-classrooms-view {
+  .layout-header__header {
+    position: initial;
+  }
+
+  .header-small {
+    z-index: $z-index-minor-elements;
+  }
+}
+
+.my-classrooms-view__title-action {
+  margin-bottom: $main-separator-components;
+}
+
+.my-classrooms-view__enter-class {
+  max-width: $my-classrooms-view-enter-class-widht;
+  margin: 0 auto;
+  padding-bottom: $my-classrooms-view-programs-margin;
+}
+
+.my-classrooms-view__enter-class-text {
+  @extend .title-h4;
+
+  margin-bottom: $my-classrooms-view-enter-class-text-margin;
+  text-align: center;
+}
+
+.my-classrooms-view__ask-teacher {
+  @extend .title-h6;
+
+  margin-top: $my-classrooms-view-enter-class-text-margin;
+  text-align: center;
+}
+
+.my-classrooms-view__programs-container {
+  margin-top: $my-classrooms-view-programs-margin;
+
+  .MuiAccordion-root {
+    background: $color-gray-08;
+    border: 0px;
+    box-shadow: none;
+    margin-top: $separator-xl !important;
+  }
+
+  .MuiAccordion-rounded:last-child {
+    border-bottom-left-radius: $my-classrooms-view-programs-border-radius;
+    border-bottom-right-radius: $my-classrooms-view-programs-border-radius;
+  }
+
+  .MuiAccordion-rounded:first-child {
+    border-top-left-radius: $my-classrooms-view-programs-border-radius;
+    border-top-right-radius: $my-classrooms-view-programs-border-radius;
+  }
+
+  #panel1a-header {
+    div {
+      @extend .title-h4;
+    }
+  }
+}
+
+.my-classrooms-view__programs-list {
+  width: 100%;
+  margin-top: $my-classrooms-view-enter-class-text-margin;
+}
+
+.my-classrooms-view__programs-accordion {
+  padding: $my-classrooms-view-enter-class-text-margin;
+}
+
+.my-classrooms-view__fab {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,79 @@
+$turn-speak-student-active-name-color: $color-title;
+$turn-speak-student-active-name-separator: $main-separator-items;
+$turn-speak-student-active-avatar-empty-size: $size-avatar-xxl;
+$turn-speak-student-active-avatar-empty-background: $color-gray-08;
+$turn-speak-student-active-avatar-empty-color: $color-first;
+$turn-speak-student-active-avatar-empty-icon-size: 75px;
+
+.turn-speak-student-active {
+}
+
+.turn-speak-student-active__name {
+  @extend .title-h4;
+  @include ellipsis-line(1);
+
+  color: $turn-speak-student-active-name-color;
+
+  margin-top: $turn-speak-student-active-name-separator;
+  text-align: center;
+}
+
+.turn-speak-student-active__name--empty {
+  visibility: hidden;
+}
+
+.turn-speak-student-active__content--animating {
+  transform: scale(1);
+  animation: leaves 1s ease-in-out;
+  -webkit-animation: leaves 1s ease-in-out;
+}
+
+@keyframes leaves {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.turn-speak-student-active__student-info {
+  .avatar {
+    margin: auto;
+  }
+}
+
+.turn-speak-student-active__student-empty {
+  width: $turn-speak-student-active-avatar-empty-size;
+  height: $turn-speak-student-active-avatar-empty-size;
+  border-radius: 100%;
+  background-color: $turn-speak-student-active-avatar-empty-background;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    height: $turn-speak-student-active-avatar-empty-icon-size;
+    width: $turn-speak-student-active-avatar-empty-icon-size;
+  }
+}
+
+@media #{$breakpoints-medium} {
+  // .turn-speak-student-active {
+  //   flex-direction: row;
+  // }
+
+  // .turn-speak-student-active__content {
+  //   margin: 0;
+  //   width: 30%;
+  // }
+
+  // .turn-speak-student-active__name {
+  //   font-size: 33px;
+  //   -webkit-line-clamp: 3; /* number of lines to show */
+  // }
+}

@@ -1,0 +1,25 @@
+$assessment-result-student-test-margin: $separator-xxxxxl;
+
+.assessment-result-student-view {
+  .layout-header__children {
+    max-width: $grid-max-width-content;
+  }
+}
+
+.assessment-result-student-view__container {
+  @extend .card-secondary;
+
+  .lemonade-view__container {
+    padding: 0;
+  }
+
+  .question-item__points {
+    display: flex;
+    justify-content: flex-end;
+    white-space: nowrap;
+  }
+}
+
+.assessment-result-student__test {
+  margin-top: $assessment-result-student-test-margin;
+}

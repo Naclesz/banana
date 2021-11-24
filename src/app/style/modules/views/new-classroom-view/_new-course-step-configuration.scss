@@ -1,0 +1,22 @@
+$new-course-step-configuration-spaces-title: $main-separator-components;
+
+.new-course-step-configuration__title {
+  @extend .title-h3;
+
+  display: block;
+  margin-bottom: $new-course-step-configuration-spaces-title;
+}
+
+.new-course-step-configuration__form-container {
+  @extend .grid-column;
+}
+
+.new-course-step-configuration__form {
+  @include column(12);
+}
+
+@media #{$breakpoints-xlarge} {
+  .new-course-step-configuration__form {
+    @include column(7);
+  }
+}

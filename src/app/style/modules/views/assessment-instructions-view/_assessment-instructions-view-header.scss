@@ -1,0 +1,133 @@
+$assessment-instructions-view-description-color: $color-title;
+$assessment-instructions-view-separator-items: $main-separator-items;
+$assessment-instructions-view-separator-metas: $main-separator-components;
+$assessment-instructions-view-separator-bubble: $main-separator-components;
+$assessment-instructions-view-separator-icon-metas: $main-separator-items;
+$assessment-instructions-view-separator-text-color-meta: $color-label;
+$assessment-instructions-view-separator-text-description-meta: $color-title;
+$assessment-instructions-view-separator-title: $main-separator-items;
+$assessment-instructions-view-meta-icon-background: $color-gray-12;
+$assessment-instructions-view-meta-icon-padding: $separator-s;
+$assessment-instructions-view-meta-icon-stroke: $color-gray-06;
+$assessment-instructions-view-meta-icon-fill: transparent;
+
+.assessment-instructions-view-header {
+}
+
+.assessment-instructions-view-header__bubble {
+}
+
+.assessment-instructions-view-header__layout {
+  display: flex;
+}
+
+.assessment-instructions-view-header__layout-right {
+  flex: 1 1 auto;
+  padding-left: $assessment-instructions-view-separator-bubble;
+}
+
+.assessment-instructions-view-header__layout-right-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.assessment-instructions-view-header__header-left {
+}
+
+.assessment-instructions-view-header__header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.assessment-instructions-view-header__header-tag {
+  display: inline-flex;
+  .tag {
+    border-radius: 8px;
+    .tag__text {
+      color: $color-gray-10;
+    }
+  }
+}
+.assessment-instructions-view-header__header-date {
+  display: inline-flex;
+  font-family: $font-second;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-gray-10;
+
+  margin-left: 6px;
+}
+.assessment-instructions-view-header__header-switch {
+  .switch {
+    align-items: center;
+  }
+}
+.assessment-instructions-view-header__header-download-button {
+  margin: 0 16px 0 32px;
+  cursor: pointer;
+}
+
+.assessment-instructions-view-header__header-edit-button {
+  margin: 0 16px;
+  cursor: pointer;
+}
+
+.assessment-instructions-view-header__header-title {
+  @extend .title-h4;
+
+  display: block;
+  margin-top: $assessment-instructions-view-separator-title;
+}
+
+.assessment-instructions-view-header__description {
+  @extend .text-small;
+
+  color: $assessment-instructions-view-description-color;
+  display: block;
+  line-height: 1.67;
+  margin-top: $assessment-instructions-view-separator-items;
+}
+
+.assessment-instructions-view-header__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: $assessment-instructions-view-separator-metas;
+}
+
+.assessment-instructions-view-header__metas {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-row: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+
+  @media #{$breakpoints-large} {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.assessment-instructions-view-header__meta {
+  margin-right: $assessment-instructions-view-separator-metas;
+
+  .icon-background--color-default {
+    .icon--lightning {
+      path {
+        stroke: $assessment-instructions-view-meta-icon-stroke;
+        fill: $assessment-instructions-view-meta-icon-fill;
+      }
+    }
+
+    .icon--lightning-off {
+      rect {
+        fill: $assessment-instructions-view-meta-icon-stroke;
+      }
+    }
+  }
+}

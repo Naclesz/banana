@@ -1,0 +1,228 @@
+$grades-grades-content-separator: $main-separator-components;
+$grades-grades-avatar-allusers-background: $color-gray-08;
+$grades-grades-avatar-fullname-color: $color-title;
+$grades-grades-avatar-separator: $main-separator-items;
+$grades-grades-th-color: $color-title;
+$grades-grades-avatar-sort-text-color: $color-label;
+$grades-grades-avatar-sort-select-icon-size: 18px;
+$grades-grades-avatar-sort-select-size: 30px;
+$grades-grades-empty-color: $color-label;
+$grades-grades-text-average-color: $color-label;
+$grades-grades-text-not-turned-color: $color-label;
+$grades-grades-min-width-th-user: 220px;
+$grades-grades-left-sticky: 220px;
+$grades-grades-select-menu-min-width: 220px;
+$grades-grades-select-menu-width: 150px;
+
+.grades-grades {
+  display: flex;
+  flex-direction: column;
+
+  .table-react {
+    max-height: calc(100vh - #{$size-height-header} - 112px);
+  }
+
+  .select-customizable__menu {
+    min-width: $grades-grades-select-menu-min-width;
+  }
+  .select-customizable__value-container {
+    width: $grades-grades-select-menu-width;
+  }
+}
+
+.grades-grades__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex: 0 0 auto;
+}
+
+.grades-grades__content {
+  flex: 1 1 auto;
+  margin-top: $grades-grades-content-separator;
+}
+
+.grades-grades__table-students-user {
+  display: flex;
+  align-items: center;
+}
+
+.grades-grades__table-students-user--click {
+  @extend .hover-basic;
+}
+
+.grades-grades__table-students-column-header-title {
+  @extend .title-h6;
+  @extend .ellipsis-complex;
+
+  color: $grades-grades-th-color;
+}
+
+.grades-grades__table-students-user-fullname {
+  @extend .text-small-bold;
+  @extend .ellipsis-complex;
+
+  color: $grades-grades-avatar-fullname-color;
+}
+
+.grades-grades__table-students-user-avatar {
+  flex: 0 0 auto;
+
+  margin-right: $grades-grades-avatar-separator;
+}
+
+.grades-grades__table-students-column-average-text {
+  @extend .title-h6;
+
+  font-size: $font-size-10 !important;
+  color: $grades-grades-th-color;
+}
+
+.grades-grades__table-students-column-header-sort-container {
+  display: flex;
+  align-items: center;
+}
+
+.grades-grades__table-students-column-header-sort-text-container {
+  flex: 0 0 auto;
+}
+
+.grades-grades__table-students-column-header-sort-text {
+  @extend .text-smallest;
+
+  color: $grades-grades-avatar-sort-text-color;
+}
+
+.grades-grades__table-students-column-header-sort-select {
+  .select-customizable__control {
+    border: 0 !important;
+    height: $grades-grades-avatar-sort-select-size !important;
+    min-height: $grades-grades-avatar-sort-select-size !important;
+  }
+
+  .select-customizable .select-customizable__single-value {
+    font-size: $font-size-08;
+  }
+
+  .icon {
+    height: $grades-grades-avatar-sort-select-icon-size;
+    width: $grades-grades-avatar-sort-select-icon-size;
+  }
+}
+
+.grades-grades__table-students-column-units-text {
+  @include ellipsis-line(1);
+  @extend .title-h6;
+
+  color: $grades-grades-th-color;
+}
+
+.grades-grades__table-empty-cell {
+  color: $grades-grades-empty-color;
+}
+
+.grades-grades__table-students-column-units-text--average {
+  color: $grades-grades-text-average-color !important;
+}
+
+.grades-grades__table-students-user--all-user {
+  .grades-grades__table-students-user-avatar {
+    .icon-bubble {
+      background: $grades-grades-avatar-allusers-background;
+    }
+  }
+}
+
+.grades-grades__table-not-turned {
+  @extend .text-small;
+
+  color: $grades-grades-text-not-turned-color;
+}
+
+.grades-grades__table--assigments {
+  .grades-grades__table-students-column-units-text {
+    @extend .text-small-bold;
+  }
+
+  .grades-grades__table-students-column-units-text--average {
+    @extend .text-small-bold;
+  }
+
+  thead {
+    th {
+      border-left: $border-size-01 solid $color-borders;
+    }
+
+    tr:first-child {
+      th {
+        position: sticky;
+        left: $grades-grades-left-sticky;
+        &:first-child {
+          border-right: 0;
+          background: $color-white;
+          z-index: 99;
+        }
+
+        &:nth-child(2) {
+          border-left: 0;
+        }
+
+        // border-top: 0;
+        border-bottom: 0;
+      }
+    }
+
+    tr:nth-child(2) {
+      th {
+        position: sticky;
+        left: $grades-grades-left-sticky;
+        border-right: $border-size-01 solid $color-borders;
+        border-left: $border-size-01 solid $color-borders;
+        border-bottom: 0;
+        border-top: 0;
+
+        padding: 0;
+
+        &:first-child {
+          background: $color-white;
+          z-index: 99;
+          border-right: 0;
+          border-bottom: 0;
+        }
+
+        &:nth-child(2) {
+          border-left: 0;
+          border-bottom: 0;
+        }
+
+        .table-react__with-arrow-container {
+          border-top: $border-size-02 solid $color-borders;
+          border-bottom: 0 !important;
+          padding: $padding-card-default-small;
+        }
+      }
+    }
+
+    tr:nth-child(3) {
+      th {
+        &:first-child {
+          border-top: 0;
+          border-right: 0;
+        }
+
+        &:nth-child(2) {
+          border-top: 0;
+          border-left: 0;
+        }
+      }
+    }
+  }
+  th {
+    text-align: left !important;
+
+    &:nth-child(2) {
+      text-align: right !important;
+    }
+  }
+}

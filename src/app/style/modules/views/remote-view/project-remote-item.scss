@@ -1,0 +1,79 @@
+$project-remote-item-color: orange;
+$project-remote-item-action-container-background: red;
+$project-remote-item-action-icon-color: $color-white;
+$project-remote-item-active-background: $color-first;
+
+.project-remote-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 8px 18px;
+}
+
+.project-remote-item--is-showing {
+  background: $project-remote-item-active-background;
+
+  .project-remote-item__info-icon {
+    fill: $color-white !important;
+
+    path:nth-child(2) {
+      fill: $color-white !important;
+    }
+  }
+
+  .project-remote-item__info-name {
+    color: $color-white;
+    font-weight: 600;
+  }
+
+  .project-remote-item__action-icon-container {
+    background-color: $color-white;
+  }
+
+  .project-remote-item__action-icon {
+    fill: $color-first;
+  }
+}
+
+.project-remote-item__info-icon {
+  flex: 0 0 auto;
+
+  width: 20px;
+  height: 20px;
+  path:nth-child(2) {
+    fill: $project-remote-item-color !important;
+  }
+}
+
+.project-remote-item__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-remote-item__info-name {
+  color: $project-remote-item-color;
+  font-size: 15px;
+  margin-left: 10px;
+  padding-right: 8px;
+}
+
+.project-remote-item__action-icon-container {
+  @extend .hover-basic;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 27px;
+  border-radius: 9px;
+  background-color: $project-remote-item-action-container-background;
+}
+
+.project-remote-item__action-icon {
+  width: 16px;
+  height: 16px;
+  fill: $project-remote-item-action-icon-color;
+}

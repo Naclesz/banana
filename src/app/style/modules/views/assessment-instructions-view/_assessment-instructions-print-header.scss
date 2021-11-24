@@ -1,0 +1,74 @@
+$assessment-instructions-print-header-border: $border-radius-01;
+$assessment-instructions-print-header-height: 80px;
+$assessment-instructions-print-header-padding: $separator-m;
+$assessment-instructions-print-header-course-margin: $separator-l;
+$assessment-instructions-print-header-assessment-margin: $separator-xxl;
+$assessment-instructions-print-header-color: $color-gray-08;
+$assessment-instructions-print-header-title-color: $color-gray-11;
+$assessment-instructions-print-header-course-color: $color-gray-10;
+
+.assessment-instructions-print-header {
+  margin-bottom: $assessment-instructions-print-header-assessment-margin;
+}
+
+.assessment-instructions-print-header__top {
+  display: flex;
+  border: 1px solid $assessment-instructions-print-header-color;
+  border-radius: $assessment-instructions-print-header-border;
+}
+
+.assessment-instructions-print-header__student,
+.assessment-instructions-print-header__date,
+.assessment-instructions-print-header__grade {
+  @extend .text-smallest;
+
+  font-style: italic;
+  color: $assessment-instructions-print-header-title-color;
+  height: $assessment-instructions-print-header-height;
+  padding-top: $assessment-instructions-print-header-padding;
+  padding-left: $assessment-instructions-print-header-padding;
+}
+
+.assessment-instructions-print-header__student,
+.assessment-instructions-print-header__date {
+  flex: 2;
+
+  border-right: 1px solid $assessment-instructions-print-header-color;
+}
+
+.assessment-instructions-print-header__grade {
+  flex: 1;
+}
+
+.assessment-instructions-print-header__course {
+  margin-top: $assessment-instructions-print-header-course-margin;
+}
+
+.assessment-instructions-print-header__course-name {
+  @extend .title-h6;
+
+  color: $assessment-instructions-print-header-course-color;
+}
+
+.assessment-instructions-print-header__assessment {
+  display: flex;
+  align-items: center;
+  margin-top: $assessment-instructions-print-header-assessment-margin;
+}
+
+.assessment-instructions-print-header__assessment-info {
+  //padding-left: $assessment-instructions-print-header-course-margin;
+}
+
+.assessment-instructions-print-header__assessment-title {
+  @extend .title-h4;
+
+  margin-bottom: $assessment-instructions-print-header-course-margin;
+  color: $color-second;
+}
+
+.assessment-instructions-print-header__assessment-description {
+  @extend .text-small;
+
+  color: $assessment-instructions-print-header-title-color;
+}

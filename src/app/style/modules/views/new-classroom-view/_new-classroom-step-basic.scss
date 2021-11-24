@@ -1,0 +1,35 @@
+$new-classroom-step-basic-spaces-title: $main-separator-components;
+$new-classroom-step-basic-subtitle-color: $color-gray-10;
+
+.new-classroom-step-basic {
+  @extend .grid;
+}
+.new-classroom-step-basic__title {
+  @extend .title-h3;
+
+  display: block;
+  margin-bottom: $new-classroom-step-basic-spaces-title;
+  margin-top: $new-classroom-step-basic-spaces-title;
+}
+
+.new-classroom-step-basic__subtitle {
+  @extend .text-small;
+
+  display: block;
+  margin-bottom: $new-classroom-step-basic-spaces-title;
+  color: $new-classroom-step-basic-subtitle-color;
+}
+
+.new-classroom-step-basic__form-container {
+  @extend .grid-column;
+}
+
+.new-classroom-step-basic__form {
+  @include column(12);
+}
+
+@media #{$breakpoints-medium} {
+  .new-classroom-step-basic__form {
+    @include column(5);
+  }
+}

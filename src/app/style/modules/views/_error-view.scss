@@ -1,0 +1,21 @@
+$error-button-width: 120px;
+
+.error__container {
+  background: $color-gray-12;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error__title {
+  @extend .title-h2;
+
+  color: $color-gray-10;
+}
+
+.error_retry {
+  margin-top: $separator-xxl;
+  width: $error-button-width;
+}

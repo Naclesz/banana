@@ -7,6 +7,14 @@ const reducers = {
   [conf.REDUCER_AUTH]: coreEntities.auth.reducer,
   [conf.REDUCER_UI]: coreEntities.ui.reducer,
   [conf.REDUCER_I18N]: coreEntities.i18n.reducer,
+  entities: combineReducers({
+    [conf.REDUCER_EDUCATION_LEVELS]: coreEntities.educationLevels.reducer,
+    [conf.REDUCER_COURSES]: coreEntities.courses.reducer,
+    [conf.REDUCER_GROUPS]: coreEntities.groups.reducer,
+    [conf.REDUCER_TASKS]: coreEntities.tasks.reducer,
+    [conf.REDUCER_CALENDARS]: coreEntities.calendars.reducer,
+    [conf.REDUCER_NOTIFICATIONS]: coreEntities.notifications.reducer,
+  }),
 };
 
 export const rootReducer = combineReducers({ ...reducers });

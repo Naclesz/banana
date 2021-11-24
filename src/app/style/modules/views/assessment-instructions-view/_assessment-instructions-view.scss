@@ -1,0 +1,162 @@
+$assessment-instructions-view-description-color: $color-title;
+$assessment-instructions-view-separator-items: $main-separator-items;
+$assessment-instructions-view-separator-metas: $main-separator-components;
+$assessment-instructions-view-separator-bubble: $main-separator-components;
+$assessment-instructions-view-separator-icon-metas: $main-separator-items;
+$assessment-instructions-view-separator-text-color-meta: $color-label;
+$assessment-instructions-view-separator-text-description-meta: $color-title;
+$assessment-instructions-view-separator-title: $main-separator-items;
+$assessment-instructions-view-meta-icon-background: $color-gray-12;
+$assessment-instructions-view-meta-icon-padding: $separator-s;
+$assessment-instructions-view-bottom-padding: $padding-card-default-vertical;
+$assessment-instructions-view-sections-separator: $separator-xl;
+$assessment-instructions-view-lemonade-padding: $separator-xl;
+$assessment-instructions-view-publisher-padding-horizontal: $separator-xxl;
+$assessment-instructions-view-publisher-padding-vertical: $separator-xs;
+$assessment-instructions-view-teacher-notes-margin: $separator-xxl;
+$assessment-instructions-view-publisher-border: $border-radius-01;
+$assessment-instructions-view-comments-amount-color: $color-gray-10;
+$assessment-instructions-view-publisher-color: $color-gray-10;
+$assessment-instructions-view-publisher-background: $color-first;
+$assessment-instructions-view-publisher-text-color: $color-white;
+$assessment-instructions-view-publisher-top: 60px;
+$assessment-instructions-view-publisher-left: -60px;
+
+.assessment-instructions-view {
+  position: relative;
+}
+
+.assessment-instructions-view__publisher {
+  position: absolute;
+  transform: rotate(-90deg);
+  backface-visibility: hidden;
+  border-radius: $assessment-instructions-view-publisher-border $assessment-instructions-view-publisher-border 0 0;
+  padding: $assessment-instructions-view-publisher-padding-vertical $assessment-instructions-view-publisher-padding-horizontal;
+  background: $assessment-instructions-view-publisher-background;
+  top: $assessment-instructions-view-publisher-top;
+  left: $assessment-instructions-view-publisher-left;
+}
+
+.assessment-instructions-view__teacher-notes {
+  margin-top: $assessment-instructions-view-teacher-notes-margin;
+}
+
+.assessment-instructions-view__publisher-text {
+  @extend .text-smallest;
+
+  color: $assessment-instructions-view-publisher-text-color;
+}
+
+.assessment-instructions-view__top {
+  @extend .card-secondary;
+
+  .question-item__points {
+    width: auto !important;
+  }
+}
+
+.assessment-instructions-view__bottom {
+  @extend .card-secondary;
+
+  padding: 0 !important;
+  margin-top: $assessment-instructions-view-sections-separator;
+
+  .comments-list-and-create__list {
+    padding: 0 $assessment-instructions-view-bottom-padding 0 $assessment-instructions-view-bottom-padding;
+  }
+}
+
+.assessment-instructions-view_comments-amount {
+  @extend .title-h6;
+
+  color: $assessment-instructions-view-comments-amount-color;
+  padding-left: $assessment-instructions-view-bottom-padding;
+  padding-top: $assessment-instructions-view-bottom-padding;
+  padding-bottom: $assessment-instructions-view-bottom-padding;
+}
+
+.assessment-instruction-view__lemonade {
+  padding-top: $assessment-instructions-view-lemonade-padding;
+  .lemo-question-controls,
+  .lemo-send-controls {
+    width: 100%;
+  }
+}
+
+.assessment-instructions-view__print-header {
+  display: none;
+}
+
+.page-number {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+
+@media print {
+  @page {
+    margin: 20px;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .lemo-controls-wrapper,
+  .lemo-hints-dialog {
+    display: none !important;
+  }
+
+  .page-number:after {
+    //content: counter(page) ' - ' counter(pages);
+    //counter-increment: page;
+    //content: counter(page);
+  }
+
+  .assessment-instructions-view-header__layout {
+    display: none !important;
+  }
+
+  .layout-header__header,
+  .assessment-instructions-view__publisher,
+  .assessment-instructions-view__teacher-notes,
+  .assessment-instructions-view__bottom {
+    display: none;
+  }
+
+  .assessment-instruction-view__lemonade {
+    padding: 0 !important;
+  }
+
+  .assessment-instructions-view__top {
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .question-item,
+  .assessment-instructions-view__print-header {
+    page-break-inside: avoid;
+  }
+
+  .scalable-content-resize {
+    //transform: scale(1) !important;
+  }
+
+  .lemo-scalable-content-wrapper {
+    max-height: 80vh !important;
+    width: 100%;
+  }
+
+  /*.lemo-question-controls {
+    width: 300px !important;
+  }*/
+
+  .assessment-instructions-view__print-header {
+    display: block;
+  }
+
+  .lemonade-view__container {
+    margin: 0;
+  }
+
+  .lemo-option-content-wrapper {
+    padding: 0.3em 1em !important;
+  }
+}

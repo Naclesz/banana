@@ -1,0 +1,80 @@
+$cover-test-view-separator: $main-separator-components;
+$cover-test-view-text-color: $color-title;
+$cover-test-view-attention-text-separator: $separator-l;
+$cover-test-view-attention-name-separator: $separator-xxxl;
+$cover-test-view-attention-padding: $separator-xl;
+$cover-test-view-attention-due-date-color: $color-red-02;
+$cover-test-view-halt-separator: $main-separator-items;
+$cover-test-view-finished-margin-top-title-back: $main-separator-items;
+
+.cover-test-view {
+  .attention-card {
+    padding: $cover-test-view-attention-padding;
+  }
+
+  .attention-card__text {
+    margin-top: $cover-test-view-attention-text-separator;
+  }
+}
+
+.cover-test-view__back-title {
+  margin-top: $cover-test-view-separator;
+}
+
+.cover-test-view__start {
+  display: block;
+  margin-top: $cover-test-view-separator;
+}
+
+.cover-test-view__name,
+.cover-test-view__metas,
+.cover-test-view__description {
+  display: block;
+  margin-top: $cover-test-view-attention-name-separator;
+}
+
+.cover-test-view__name {
+  @extend .title-h6;
+
+  color: $cover-test-view-text-color;
+}
+
+.cover-test-view__description {
+  @extend .text-small;
+
+  color: $cover-test-view-text-color;
+}
+
+.cover-test-view__metas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cover-test-view__due-date-attention {
+  color: $cover-test-view-attention-due-date-color !important;
+}
+
+.cover-test-view__meta {
+  display: flex;
+  align-items: center;
+}
+
+.cover-test-view__icon-halt {
+  margin-left: $cover-test-view-halt-separator;
+}
+
+.cover-test-view--status-finished {
+  .attention-card {
+    border: 0 !important;
+    box-shadow: none;
+  }
+
+  .cover-test-view__start {
+    margin-top: $cover-test-view-separator;
+  }
+
+  .back-title-and-icon__item {
+    visibility: hidden;
+  }
+}

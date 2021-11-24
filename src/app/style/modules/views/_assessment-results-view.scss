@@ -1,0 +1,349 @@
+$assessment-results-view-layout-calendar-right-background: $color-background;
+$assessment-results-view-search-separator: $separator-xxxl;
+$assessment-results-view-list-title-border: $border-size-01 solid $color-borders;
+$assessment-results-view-list-padding: $separator-s;
+$assessment-results-view-list-separator: $main-separator-items;
+$assessment-results-view-list-title-color: $color-label;
+$assessment-results-view-doughnut-with: 144px;
+$assessment-results-view-attention-card-separator: $separator-xxxxl;
+$assessment-results-view-title-padding: $main-separator-items;
+$assessment-results-view-title-color: $color-title;
+$assessment-results-view-due-date-separator: $main-separator-items;
+$assessment-results-view-due-date-value-color: $color-first;
+$assessment-results-view-results-separator: $main-separator-components;
+$assessment-results-view-results-stats-separator: $separator-xxxl;
+$assessment-results-view-results-note-width: 175px;
+$assessment-results-view-left-padding: $main-separator-items;
+$assessment-results-view-separators: $main-separator-components;
+$assessment-results-view-list-profile-width: 265px;
+$assessment-results-view-text-separator: $main-separator-items;
+$assessment-results-view-text-color: $color-title;
+$assessment-results-view-on-time-separator: $main-separator-items;
+$assessment-results-view-on-time-value-color: $color-title;
+$assessment-results-view-no-users-width: 80%;
+
+.assessment-results-view {
+  overflow-x: hidden;
+
+  .MuiAccordion-root {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    height: auto !important;
+
+    background: transparent;
+    box-shadow: none;
+
+    border-top: $assessment-results-view-list-title-border;
+  }
+
+  .MuiAccordion-root.Mui-expanded {
+    margin: 0;
+  }
+
+  .MuiAccordionSummary-root.Mui-expanded {
+    border-bottom: $assessment-results-view-list-title-border;
+    margin: 0;
+  }
+
+  .MuiAccordionSummary-root {
+    height: auto !important;
+  }
+}
+
+.assessment-results-view__search {
+  width: 100%;
+  margin-bottom: $assessment-results-view-search-separator;
+  padding-right: $assessment-results-view-list-padding;
+}
+
+.assessment-results-view__users-list-header {
+  display: flex;
+  align-items: center;
+
+  padding-top: $assessment-results-view-list-padding;
+  padding-bottom: $assessment-results-view-list-padding;
+  width: 100%;
+}
+
+.assessment-results-view__users-list-header-text {
+  @extend .text-small-bold;
+
+  margin-left: $assessment-results-view-list-padding;
+  color: $assessment-results-view-list-title-color;
+}
+
+.assessment-results-view__user-list {
+  margin-top: $assessment-results-view-list-padding;
+  padding-right: $assessment-results-view-left-padding;
+  width: 100%;
+
+  .basic-list__item {
+    @extend .hover-basic;
+
+    margin-left: $separator-xxl;
+  }
+
+  .basic-list__item:last-child {
+    margin-bottom: $main-separator-items;
+  }
+}
+
+.assessment-results-view__top-info {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: $assessment-results-view-attention-card-separator;
+}
+
+.assessment-results-view__attention-card {
+  flex: 1 1 auto;
+  margin-right: $assessment-results-view-results-stats-separator;
+
+  .attention-card {
+    height: 100%;
+  }
+}
+
+.assessment-results-view__doughnut {
+  margin: auto;
+
+  .doughnut-rechart {
+    width: 160px;
+    height: 160px;
+    position: relative;
+  }
+}
+
+.assessment-results-view__title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: $assessment-results-view-list-title-border;
+  border-bottom: $assessment-results-view-list-title-border;
+  padding: $assessment-results-view-title-padding 0;
+}
+
+.assessment-results-view__title {
+  @extend .title-h5;
+
+  color: $assessment-results-view-title-color;
+}
+
+.assessment-results-view__due-date-container {
+  display: flex;
+  align-items: center;
+}
+
+.assessment-results-view__due-date {
+  @extend .text-extra;
+
+  display: flex;
+  align-items: center;
+
+  margin-left: $assessment-results-view-due-date-separator;
+}
+
+.assessment-results-view__due-date-value {
+  color: $assessment-results-view-due-date-value-color;
+}
+
+.assessment-results-view__results-info {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  margin-top: $assessment-results-view-results-separator;
+}
+
+.assessment-results-view__stats {
+  flex: 1 1 auto;
+  margin-right: $assessment-results-view-results-stats-separator;
+}
+
+.assessment-results-view__note {
+  width: $assessment-results-view-results-note-width;
+}
+
+.assessment-results-view__on-time-container {
+  display: flex;
+  align-items: center;
+
+  border-bottom: $assessment-results-view-list-title-border;
+  margin-top: $assessment-results-view-on-time-separator;
+  padding-bottom: $assessment-results-view-on-time-separator;
+}
+
+.assessment-results-view__on-time {
+  @extend .text-extra;
+
+  display: flex;
+  align-items: center;
+
+  margin-left: $assessment-results-view-on-time-separator;
+}
+
+.assessment-results-view__on-time-value {
+  color: $assessment-results-view-on-time-value-color;
+}
+
+.assessment-results-view__no-items {
+  margin: auto;
+  width: $assessment-results-view-no-users-width;
+}
+
+// Responsive
+
+.assessment-results-view {
+  .assessment-results-view__mobile-menu-button {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 9999;
+
+    .button {
+      border-radius: 50%;
+      padding: 12px 12px;
+    }
+  }
+
+  .assessment-results-view__mobile-menu-backdrop {
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(0, 0, 0);
+    top: 0;
+    right: 0;
+    opacity: 0;
+    z-index: $z-index-aside-overlay;
+  }
+
+  .layout-calendar__column-1 {
+    padding-top: 84px;
+    padding-right: 0;
+    right: -450px;
+    left: unset;
+    top: 0;
+    height: 100vh !important;
+    z-index: $z-index-aside;
+    transition: right 0.3s ease-in-out;
+    border-right: $assessment-results-view-list-title-border;
+  }
+
+  .layout-calendar__column-2 {
+    background: $assessment-results-view-layout-calendar-right-background;
+    padding-left: 28px;
+  }
+
+  &.assessment-results-view__mobile-menu--open {
+    .layout-calendar__column-1 {
+      right: 0;
+      transition: right 0.3s ease-in-out;
+    }
+    .assessment-results-view__mobile-menu-button {
+      right: 57px;
+    }
+    .assessment-results-view__mobile-menu-backdrop {
+      display: block;
+      opacity: 0.25;
+    }
+  }
+}
+
+.assessment-results-view__attention-card {
+  flex: 1 1 auto;
+  margin-right: $assessment-results-view-results-stats-separator;
+  max-width: 550px;
+
+  .attention-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .attention-card__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: $separator-s;
+
+      .button {
+        margin-top: $separator-m;
+      }
+    }
+  }
+}
+
+.assessment-results-view__top-info .assessment-results-view__note {
+  display: block;
+  margin-left: 30px;
+  min-width: 175px;
+  align-self: center;
+}
+
+.assessment-results-view__results-info .assessment-results-view__note {
+  display: none;
+}
+
+@media #{$breakpoints-xlarge} {
+  .assessment-results-view {
+    .assessment-results-view__mobile-menu-button {
+      display: none;
+    }
+    .assessment-results-view__mobile-menu-backdrop {
+      display: none;
+    }
+
+    .layout-calendar__column-1 {
+      border-left: $assessment-results-view-list-title-border;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-right: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      width: 450px;
+      padding-left: 32px;
+      top: unset;
+    }
+
+    .layout-calendar__column-2 {
+      padding-top: 20px;
+      padding-left: calc(450px + 20px);
+      padding-bottom: 20px;
+      width: 100%;
+    }
+
+    .assessment-results-view__top-info .assessment-results-view__note {
+      display: none;
+    }
+
+    .assessment-results-view__results-info .assessment-results-view__note {
+      display: block;
+    }
+
+    .assessment-results-view__attention-card {
+      max-width: none;
+
+      .attention-card {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .attention-card__actions {
+          display: flex;
+          flex-direction: row;
+
+          .button {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

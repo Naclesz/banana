@@ -1,0 +1,56 @@
+$new-classroom-step-books-separator: $main-separator-components;
+$new-classroom-step-books-subtitle-color: $color-label;
+$new-classroom-step-books-list-space: $main-separator-components;
+
+.new-classroom-step-books {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-classroom-step-books__header {
+  @extend .grid;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-classroom-step-books__filters-bar-container {
+  @extend .grid;
+}
+.new-classroom-step-books__title {
+  @extend .title-h3;
+
+  display: block;
+}
+
+.new-classroom-step-books__list-grid {
+  @extend .grid;
+}
+
+.new-classroom-step-books__subtitle {
+  @extend .text-small;
+
+  color: $new-classroom-step-books-subtitle-color;
+  display: block;
+  margin-bottom: $new-classroom-step-books-separator;
+}
+
+.new-classroom-step-books__header-actions {
+  flex: 0 0 auto;
+}
+
+.new-classroom-step-books__header-action {
+  @extend .text-link;
+  @extend .title-h2;
+
+  font-size: $font-size-06 !important;
+}
+
+.new-classroom-step-books__list {
+  margin-top: $new-classroom-step-books-list-space;
+  overflow-y: auto;
+}
+
+.new-classroom-step-books__main-info {
+  margin-top: $new-classroom-step-books-list-space;
+}

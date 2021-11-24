@@ -1,0 +1,981 @@
+$lemonade-view-container-padding: $separator-l;
+$lemonade-view-container-pencil-tools-padding: $separator-s;
+$lemonade-view-container-margin: $main-separator-components;
+$lemonade-view-container-border-radius: $border-radius-01;
+$lemonade-view-container-pencil-tools-border-radius: $border-radius-03;
+$lemonade-view-container-pencil-tools-selected: $border-radius-04;
+$lemonade-view-container-feedback-border: $border-radius-02;
+$lemonade-view-background-color: $color-gray-12;
+$lemonade-view-container-color: $color-white;
+$lemonade-view-container-title-color: $color-gray-11;
+$lemonade-view-container-border-color: $color-gray-08;
+$lemonade-view-container-exercise-active-color: $color-first;
+$lemonade-view-container-exercise-button-color: $red-gradient;
+$lemonade-view-container-exercise-pencil-canvas-border-color: $color-gray-13;
+$lemonade-view-container-feedback-success: $color-green-01;
+$lemonade-view-container-feedback-error: $color-red-02;
+$lemonade-view-container-dropdown-success-background: $color-green-03;
+$lemonade-view-container-dropdown-error-background: $color-red-03;
+$lemonade-view-points-width: 100px;
+$lemonade-base-font-weight: 400;
+
+.lemonade-exercises {
+  --lemo-color-white: #ffffff;
+  --lemo-color-primary: #f04d29;
+  --lemo-color-primary-light: #f5f8fe;
+  --lemo-color-primary-hover: #fb613f;
+  --lemo-color-background: #fafafa;
+  --lemo-color-error: #f66868;
+  --lemo-color-error-light: rgba(247, 104, 104, 0.1);
+  --lemo-color-error-hover: #cf4c4c;
+  --lemo-color-success: #41d158;
+  --lemo-color-success-light: rgba(65, 209, 88, 0.1);
+  --lemo-color-blockquote-border: lightblue;
+  --lemo-color-blockquote-background: aliceblue;
+  --lemo-radii-01: 0.3em;
+  --lemo-radii-02: 0.5em;
+  --lemo-radii-03: 0.7em;
+  --lemo-opacity-disabled: 0.4;
+  --lemo-line-height: 1.9;
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+.lemonade-exercises .lemo-base-option {
+  font-weight: $lemonade-base-font-weight;
+}
+
+.lemonade-view {
+  min-height: 100vh;
+  width: 100%;
+  background-color: $lemonade-view-background-color;
+  float: left;
+
+  .lemonade-exercises {
+    @extend .grid;
+    @extend .grid-column;
+
+    padding-top: $main-padding-page;
+    margin: auto !important;
+    align-items: flex-start;
+  }
+
+  .lemo-editor {
+    padding-top: 0 !important;
+  }
+
+  // responsive
+  .lemonade-exercises__left {
+    @include column(12);
+  }
+
+  .lemonade-view__container {
+    @include column(12);
+
+    top: $size-height-header;
+    width: calc(400% / 12 - 48px);
+    margin-left: 24px;
+    position: sticky;
+    left: calc(600% / 12);
+    margin-top: 0;
+
+    padding: 0 $padding-card-default-horizontal;
+  }
+
+  @media #{$breakpoints-large} {
+    .lemonade-exercises__left {
+      @include column(6);
+    }
+
+    .lemonade-view__container {
+      @include column(6);
+    }
+  }
+}
+
+.lemonade-view__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lemonade-view__header-right {
+  display: flex;
+  align-items: center;
+}
+
+.lemonade-view__header-drag {
+  @extend .hover-basic;
+}
+
+.lemonade-view__container {
+  margin: $lemonade-view-container-margin auto 0 auto;
+  padding: $lemonade-view-container-padding;
+  background-color: $lemonade-view-container-color;
+  border: 1px solid $lemonade-view-container-border-color;
+  border-radius: $lemonade-view-container-border-radius;
+
+  .lemonade-exercises {
+    width: 100%;
+    display: flex;
+  }
+
+  //GENERAL
+  .lemo-question-header {
+    font-family: $font-second;
+    color: $lemonade-view-container-title-color;
+  }
+
+  .lemo-stimulus {
+    @extend .title-h6;
+  }
+
+  .lemo-title {
+    display: none;
+  }
+
+  .lemo-question-body {
+    @extend .text-p;
+
+    color: $lemonade-view-container-title-color;
+  }
+
+  .lemo-question-controls,
+  .lemo-send-controls {
+    width: 100%;
+  }
+
+  // Buttons
+
+  .lemo-simple-button,
+  .lemo-inline-button {
+    @extend .button;
+    @extend .button__content;
+
+    font-weight: normal;
+    height: auto;
+  }
+
+  .lemo-simple-button--primary {
+    @extend .button--color-primary;
+  }
+
+  .lemo-simple-button--secondary {
+    @extend .button--color-primary-outlined;
+
+    color: $lemonade-view-container-exercise-active-color !important;
+    fill: $lemonade-view-container-exercise-active-color !important;
+
+    &:disabled {
+      background: transparent;
+      border-color: $color-gray-09;
+      color: $color-gray-09 !important;
+    }
+  }
+
+  .lemo-controls-button-solution {
+    @extend .button--color-primary;
+    color: $lemonade-view-container-color !important;
+    border: 0 !important;
+  }
+
+  .lemo-controls-button-reset {
+    @extend .button--color-primary-outlined;
+  }
+
+  // Checkbox rounded
+
+  .lemo-checkbox-rounded-icon {
+    .lemo-shape {
+      border: 1px solid $color-gray-09;
+    }
+    .lemo-icon {
+      width: 10px !important;
+      height: 10px !important;
+    }
+  }
+
+  .lemo-selected {
+    .lemo-checkbox-rounded-icon .lemo-shape {
+      box-shadow: none;
+      border: solid 1px var(--lemo-color-primary);
+    }
+  }
+
+  .lemo-success {
+    .lemo-checkbox-rounded-icon .lemo-shape {
+      border: solid 1px var(--lemo-color-success);
+      .lemo-icon {
+        background-color: var(--lemo-color-success);
+      }
+    }
+  }
+
+  .lemo-error {
+    .lemo-checkbox-rounded-icon .lemo-shape {
+      border: solid 1px var(--lemo-color-error);
+
+      .lemo-icon {
+        background-color: var(--lemo-color-error);
+      }
+    }
+  }
+
+  // Checkbox square
+
+  .lemo-checkbox-square-icon {
+    .lemo-shape {
+      box-shadow: none !important;
+      border: 1px solid $color-gray-09;
+    }
+    svg {
+      display: none;
+    }
+  }
+
+  .lemo-selected {
+    .lemo-checkbox-square-icon .lemo-shape {
+      position: relative;
+      border-color: var(--lemo-color-primary);
+      background-color: var(--lemo-color-white);
+
+      &:after {
+        content: '';
+        position: absolute;
+        border-radius: 2px;
+        height: 10px;
+        width: 10px;
+        top: 3px;
+        left: 3px;
+        background-color: var(--lemo-color-primary);
+      }
+    }
+  }
+
+  .lemo-success {
+    .lemo-checkbox-square-icon .lemo-shape {
+      border: solid 1px var(--lemo-color-success);
+      &:after {
+        background-color: var(--lemo-color-success);
+      }
+    }
+  }
+
+  .lemo-error {
+    .lemo-checkbox-square-icon .lemo-shape {
+      border: solid 1px var(--lemo-color-error);
+      &:after {
+        background-color: var(--lemo-color-error);
+      }
+    }
+  }
+
+  // Feedback
+
+  .lemo-feedback-item {
+    @extend .text-p;
+    border-color: transparent !important;
+    border-radius: $lemonade-view-container-feedback-border !important;
+    box-shadow: none !important;
+
+    &.lemo-success {
+      background: var(--lemo-color-success-light) !important;
+      color: $lemonade-view-container-feedback-success !important;
+    }
+    &.lemo-error {
+      background: var(--lemo-color-error-light) !important;
+      color: $lemonade-view-container-feedback-error !important;
+    }
+  }
+
+  .lemo-feedback-pin.lemo-floating.lemo-error {
+    background-color: var(--lemo-color-error) !important;
+  }
+  .lemo-feedback-pin.lemo-floating.lemo-success {
+    background-color: var(--lemo-color-success) !important;
+  }
+
+  // Hints
+
+  .lemo-hints-dialog .lemo-dialog-content {
+    width: 100%;
+  }
+
+  //PENCIL
+  .lemo-pencil-question {
+    width: 100%;
+  }
+
+  .lemo-canvas-wrapper {
+    border: 1px solid $lemonade-view-container-exercise-pencil-canvas-border-color !important;
+    border-radius: $lemonade-view-container-border-radius;
+  }
+
+  .lemo-drawing-tools-wrapper {
+    //TODO if I put the tools at the top it moves when color picker shows
+    /*top: 1em;
+    bottom: auto;*/
+  }
+
+  .lemo-drawing-tool-panel {
+    border: 1px solid $lemonade-view-container-border-color !important;
+    box-shadow: 0px 5px 20px rgba(169, 155, 144, 0.2) !important;
+    border-radius: $lemonade-view-container-pencil-tools-border-radius !important;
+    padding: $lemonade-view-container-pencil-tools-padding !important;
+
+    .lemo-tool-button {
+      &.lemo-selected {
+        border-radius: $lemonade-view-container-pencil-tools-selected !important;
+        background: $lemonade-view-container-exercise-pencil-canvas-border-color !important;
+
+        .lemo-tool-icon {
+          //TODO Prevent the fill and stroke of the svg when its selected
+        }
+      }
+    }
+
+    .lemo-color-swatch {
+      &.lemo-selected {
+      }
+    }
+  }
+
+  // Upload file
+
+  .lemo-upload-file-question {
+    .lemo-upload-icon {
+      .lemo-start-icon {
+        fill: $lemonade-view-container-exercise-active-color;
+      }
+    }
+
+    .lemo-drop-area {
+      background: $lemonade-view-background-color !important;
+      border: 2px dashed $lemonade-view-container-border-color !important;
+    }
+
+    .lemo-drop-area-message {
+      a {
+        color: $lemonade-view-container-exercise-active-color;
+        text-decoration: underline;
+      }
+    }
+
+    .lemo-isDragActive {
+      background: rgba(255, 83, 34, 0.1) !important;
+    }
+
+    .lemo-file-icon {
+      background: $gradient !important;
+    }
+
+    .lemo-file-upload-progress-value {
+      color: $color-gray-10 !important;
+    }
+    .lemo-close-button-wrapper {
+      z-index: 9;
+    }
+  }
+
+  // Multiple choice
+
+  .lemo-multiple-choice-question {
+    .lemo-question-body.lemo-with-columns {
+      .lemo-column-2 {
+        width: calc(50% - 10px);
+        margin: 5px;
+      }
+
+      .lemo-column-3 {
+        width: calc(33.333% - 10px);
+        margin: 5px;
+      }
+
+      .lemo-column-4 {
+        width: calc(25% - 10px);
+        margin: 5px;
+      }
+
+      .lemo-column-5 {
+        width: calc(20% - 10px);
+        margin: 5px;
+      }
+
+      .lemo-column-6 {
+        width: calc(16.666% - 10px);
+        margin: 5px;
+      }
+    }
+
+    .lemo-option-content-wrapper {
+      box-shadow: none !important;
+      background: transparent !important;
+      border: 0 !important;
+    }
+
+    .lemo-selected {
+      .lemo-base-option__wrapper--without-check-icon {
+        background: var(--lemo-color-primary-light) !important;
+        border-radius: 8px;
+        margin: 0 -0.5em;
+        padding: 0.75em 1.25em;
+      }
+    }
+
+    .lemo-success {
+      background: var(--lemo-color-success-light) !important;
+      border-radius: 8px;
+      .lemo-base-option__wrapper--without-check-icon {
+        background: transparent !important;
+      }
+    }
+    .lemo-error {
+      background: var(--lemo-color-error-light) !important;
+      border-radius: 8px;
+      .lemo-base-option__wrapper--without-check-icon {
+        background: transparent !important;
+      }
+    }
+
+    .lemo-base-block-letter--selected {
+      background: var(--lemo-color-primary-light) !important;
+      border-radius: 8px;
+      padding: 0.75em 1.25em;
+    }
+
+    .lemo-base-block-letter--feedback-success {
+      background: var(--lemo-color-success-light) !important;
+    }
+
+    .lemo-base-block-letter--feedback-error {
+      background: var(--lemo-color-error-light) !important;
+    }
+  }
+
+  // Essay
+
+  .lemo-essay-short-text-question {
+    .lemo-response {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      line-height: 20px;
+      box-shadow: none !important;
+      background-color: var(--lemo-color-white);
+      border: 1px solid $color-gray-16;
+      padding: $separator-l;
+      &::placeholder {
+        font-family: $font-second;
+        font-size: $font-size-07;
+        line-height: 20px;
+      }
+
+      &:focus {
+        border: 1px solid $color-gray-10 !important;
+      }
+    }
+
+    .lemo-text-counter-wrapper {
+      font-family: $font-second;
+      font-size: 16px;
+    }
+
+    .lemo-error {
+      border: 1px solid var(--lemo-color-error) !important;
+    }
+
+    .lemo-success {
+      border: 1px solid var(--lemo-color-success) !important;
+    }
+  }
+
+  .lemo-essay-rich-text-question {
+    margin: 0 20px 0 20px;
+    width: auto;
+
+    .lemo-stimulus {
+      margin-top: 0;
+    }
+
+    .lemo-rt-editor {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      line-height: 20px;
+      box-shadow: none !important;
+      background-color: var(--lemo-color-white);
+      border: 1px solid $color-gray-16 !important;
+    }
+    .lemo-base-essay--focused {
+      border: 1px solid $color-gray-10 !important;
+    }
+
+    .lemo-base-essay__toolbar-button--active {
+      fill: var(--lemo-color-primary);
+    }
+
+    .lemo-base-essay__text-counter {
+      font-family: $font-second;
+      font-size: 16px;
+    }
+  }
+
+  // Choice matrix
+
+  .lemo-choice-matrix-question {
+    .lemo-choice-matrix-thead {
+      background-color: var(--lemo-color-white);
+      border-bottom: 1px solid $color-gray-08;
+    }
+    .lemo-thead-wrapper div {
+      background: $color-gray-12;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-family: $font-second-bold;
+      font-size: $font-size-07;
+      color: $color-gray-10;
+      display: inline;
+      min-width: 100px;
+    }
+
+    .lemo-question-response-value {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      color: $color-gray-10;
+      text-align: left;
+      padding-left: 8px;
+    }
+
+    .lemo-selected {
+      .lemo-question-response-value {
+        color: $color-gray-18;
+      }
+    }
+
+    .lemo-choice-matrix-question-row {
+      background-color: var(--lemo-color-white) !important;
+      border-bottom: 1px solid $color-gray-08;
+      border-top: 1px solid $color-gray-08;
+    }
+    .lemo-question-stem-content {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      line-height: 25px;
+      color: $color-gray-11;
+    }
+  }
+
+  // Cloze
+
+  .lemo-cloze-text-question {
+    .lemo-cloze-question-template {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      color: $color-gray-18;
+      line-height: 4;
+    }
+
+    .lemo-text-blank {
+      border: 2px solid $color-gray-08;
+      color: #bdbdbd;
+      filter: drop-shadow(0px 2px 5px rgba(129, 102, 81, 0.15));
+      background: #faf7f5;
+      padding: 0.3em 0.6em;
+      &:focus {
+        border: 2px solid $color-red-04;
+        background: var(--lemo-color-white);
+        color: $color-gray-18;
+      }
+    }
+
+    .lemo-text-blank.lemo-selected {
+      border: 2px solid $color-gray-08;
+      background: var(--lemo-color-white);
+      color: $color-gray-18;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+    }
+
+    .lemo-text-blank.lemo-success {
+      border: 2px solid var(--lemo-color-success);
+      background: var(--lemo-color-success-light);
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+    }
+
+    .lemo-text-blank.lemo-error {
+      border: 2px solid var(--lemo-color-error);
+      background: var(--lemo-color-error-light);
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+    }
+  }
+
+  .cloze-math-question {
+    .lemo-text-blank > .lemo-mathField {
+      border: 2px solid $color-gray-08;
+      background: var(--lemo-color-white);
+      color: $color-gray-18;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+    }
+    .lemo-text-blank.lemo-success > .lemo-mathField {
+      border: 2px solid var(--lemo-color-success);
+      background: var(--lemo-color-success-light);
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+    }
+
+    .lemo-text-blank.lemo-error > .lemo-mathField {
+      border: 2px solid var(--lemo-color-error);
+      background: var(--lemo-color-error-light);
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+    }
+  }
+
+  // Cloze drag and drop
+
+  .lemo-cloze-text-association {
+    .lemo-cloze-question-template {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      color: $color-gray-18;
+      line-height: 4;
+    }
+    .lemo-drop-area {
+      background: #faf7f5;
+      border: 2px dashed $color-gray-08;
+      min-width: 100px;
+      min-height: 40px;
+      box-shadow: inset 2px 2px 4px rgba(10, 6, 5, 0.1);
+      color: $color-gray-18;
+      display: flex;
+      align-items: center;
+    }
+    .lemo-drop-area.lemo-selected {
+      border: 2px solid $color-gray-08 !important;
+      background: var(--lemo-color-white) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      &:after {
+        content: '×';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $color-gray-14;
+        color: $color-gray-10;
+        height: 24px;
+        width: 32px;
+        border-radius: 50%;
+        font-size: $font-size-05;
+        padding: 0 3px 3px;
+        margin: 0 4px 0 8px;
+      }
+    }
+
+    .lemo-drop-area.lemo-success {
+      border: 2px solid var(--lemo-color-success) !important;
+      background: var(--lemo-color-success-light) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      &:after {
+        content: none;
+      }
+    }
+
+    .lemo-drop-area.lemo-error {
+      border: 2px solid var(--lemo-color-error) !important;
+      background: var(--lemo-color-error-light) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      &:after {
+        content: none;
+      }
+    }
+
+    .lemo-drag-option {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      color: $color-gray-11;
+      border: 2px solid $color-gray-08 !important;
+      background: var(--lemo-color-white) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      padding: 0.4em 1em;
+      &.lemo-dragging {
+        border: 2px solid var(--lemo-color-primary) !important;
+        cursor: grabbing;
+        opacity: 1;
+        color: $color-gray-18 !important;
+      }
+    }
+  }
+
+  // Classify
+
+  .lemo-classify-order-list-question,
+  .lemo-classify-match-list-question,
+  .lemo-classify-classification-question {
+    .lemo-classification-table {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      color: $color-gray-18;
+      line-height: 4;
+    }
+
+    .lemo-classification-th {
+      padding: 8px 0px;
+      background: $color-gray-12;
+      border-radius: 8px;
+      color: $color-gray-10;
+      font-family: $font-second-bold;
+      text-align: center;
+    }
+
+    .lemo-classification-rows-header {
+      vertical-align: middle;
+      color: $color-gray-11;
+      font-family: $font-second-bold;
+    }
+
+    .lemo-classification-drop {
+      background-color: var(--lemo-color-white) !important;
+      border: 2px dashed $color-gray-08;
+      color: $color-gray-18;
+    }
+
+    .lemo-drop-area {
+      border-radius: 8px;
+    }
+
+    .lemo-classification-dropped-item-container {
+      min-height: 100px;
+    }
+
+    .lemo-drag-instance.lemo-success,
+    .lemo-classification-drop.lemo-success {
+      border: 2px solid var(--lemo-color-success) !important;
+      background: var(--lemo-color-success-light) !important;
+      box-shadow: none;
+      &:after {
+        content: none;
+      }
+    }
+    .lemo-drag-instance.lemo-error,
+    .lemo-classification-drop.lemo-error {
+      border: 2px solid var(--lemo-color-error) !important;
+      background: var(--lemo-color-error-light) !important;
+      box-shadow: none;
+      &:after {
+        content: none;
+      }
+    }
+
+    .lemo-drag-instance,
+    .lemo-dropped-item,
+    .lemo-drag-option {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      color: $color-gray-11;
+      border: 2px solid $color-gray-08 !important;
+      background: var(--lemo-color-white) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      padding: 0.4em 1em !important;
+
+      &.lemo-dragging {
+        border: 2px solid var(--lemo-color-primary) !important;
+        cursor: grabbing;
+        opacity: 1;
+        color: $color-gray-18 !important;
+      }
+    }
+
+    .lemo-dropped-item {
+      position: relative;
+      &:after {
+        content: '×';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $color-gray-14;
+        color: $color-gray-10;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        font-size: $font-size-05;
+        padding: 0 3px 3px;
+        margin: 0 4px 0 8px;
+        position: absolute;
+        top: 6px;
+        right: 2px;
+      }
+      .lemo-dropped-item-content {
+        padding-right: 28px;
+      }
+    }
+
+    .lemo-dropped-item.lemo-success {
+      border: 2px solid var(--lemo-color-success) !important;
+      background: var(--lemo-color-success-light) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      &:after {
+        content: none;
+      }
+      .lemo-dropped-item-content {
+        padding-right: 0;
+      }
+    }
+
+    .lemo-dropped-item.lemo-error {
+      border: 2px solid var(--lemo-color-error) !important;
+      background: var(--lemo-color-error-light) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      &:after {
+        content: none;
+      }
+      .lemo-dropped-item-content {
+        padding-right: 0;
+      }
+    }
+
+    .lemo-drag-list {
+      margin: 20px auto;
+    }
+  }
+
+  // Classify order list
+
+  .lemo-classify-order-list-question {
+    .lemo-drag-wrapper:active .lemo-drag-instance {
+      border: 2px solid var(--lemo-color-primary) !important;
+    }
+  }
+
+  // Classify match list
+
+  .lemo-classify-match-list-question {
+    .lemo-match-list-row {
+      background-color: var(--lemo-color-white) !important;
+      font-family: $font-second;
+      font-size: $font-size-07;
+      color: $color-gray-18;
+    }
+
+    .lemo-drop-area {
+      font-family: $font-second;
+      font-size: $font-size-07;
+      background: $color-gray-12;
+      border: 2px dashed $color-gray-08;
+      min-width: 100px;
+      min-height: 40px;
+      box-shadow: inset 2px 2px 4px rgba(10, 6, 5, 0.1);
+      color: $color-gray-18;
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+    }
+
+    .lemo-drop-area.lemo-selected {
+      border: 2px solid $color-gray-08 !important;
+      background: var(--lemo-color-white) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      &:after {
+        content: '×';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $color-gray-14;
+        color: $color-gray-10;
+        height: 24px;
+        width: 32px;
+        border-radius: 50%;
+        font-size: $font-size-05;
+        padding: 0 3px 3px;
+        margin: 0 4px 0 8px;
+      }
+    }
+
+    .lemo-drop-area.lemo-success {
+      border: 2px solid var(--lemo-color-success) !important;
+      background: var(--lemo-color-success-light) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      &:after {
+        content: none;
+      }
+    }
+
+    .lemo-drop-area.lemo-error {
+      border: 2px solid var(--lemo-color-error) !important;
+      background: var(--lemo-color-error-light) !important;
+      box-shadow: 0px 2px 5px rgba(129, 102, 81, 0.15);
+      &:after {
+        content: none;
+      }
+    }
+
+    .lemo-drag-list {
+      margin: 20px auto;
+    }
+  }
+
+  // Linking lines
+  .lemo-linking-lines-question {
+    .lemo-option-content.lemo-success,
+    .lemo-option-content.lemo-error {
+      box-shadow: none;
+    }
+  }
+}
+
+// Dropdown
+
+.lemonade-dropdown-exercises {
+  position: absolute;
+  z-index: 1000;
+  top: 5px;
+  left: 24px;
+}
+
+.lemo-success {
+  .lemo-dropdown-control {
+    border: 2px solid $lemonade-view-container-feedback-success !important;
+    background: $lemonade-view-container-dropdown-success-background !important;
+  }
+}
+
+.lemo-error {
+  .lemo-dropdown-control {
+    border: 2px solid $lemonade-view-container-feedback-error !important;
+    background: $lemonade-view-container-dropdown-error-background !important;
+  }
+}
+
+.lemonade-view__header-points {
+  width: $lemonade-view-points-width;
+  .input-points {
+    .input-points__input-container {
+      @extend .border-light-black;
+
+      border-radius: $input-points-border-radius-big;
+      padding-right: 8px !important;
+    }
+  }
+  &.has-error {
+    .input-points__input-container {
+      border-color: var(--lemo-color-primary) !important;
+    }
+  }
+}
+
+// Individual Feedback Pins
+
+.lemo-feedback-pin-tooltip.lemo-error {
+  background: none !important;
+}
+.lemo-tooltip {
+  .lemo-tooltip-content__content {
+    padding: 16px 24px 16px 24px;
+  }
+  .lemo-tooltip-content__close-button {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    background-color: var(--lemo-color-primary) !important;
+  }
+}
+
+// TODO: temp style to hide lemonade send button
+.lemo-controls-button-send.lemo-primary {
+  display: none !important;
+}

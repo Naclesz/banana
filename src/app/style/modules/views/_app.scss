@@ -1,0 +1,25 @@
+.app-content--publisher {
+  display: flex;
+
+  & > :not(.bar-menu) {
+    flex: 1 1 auto;
+  }
+
+  .bar-menu {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  .profile-view__mobile-menu-header {
+    width: calc(100% - #{$size-bar-menu-width}) !important;
+  }
+}
+
+@media #{$breakpoints-xlarge} {
+  .app-content--publisher {
+    .layout-calendar__column-1 {
+      left: $size-bar-menu-width !important;
+    }
+  }
+}

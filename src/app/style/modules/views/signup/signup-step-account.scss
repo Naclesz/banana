@@ -1,0 +1,21 @@
+$signup-step-account-separator-form: $main-separator-components;
+$signup-step-account-separator-list: $main-separator-components;
+$signup-step-account-separator-list-title: $main-separator-items;
+
+.signup-step-account {
+  @extend .grid;
+}
+
+.signup-step-account__container {
+  @include column--without-gutter(12);
+}
+
+.signup-step-account__form {
+  margin-top: $signup-step-account-separator-form;
+}
+
+@media #{$breakpoints-large} {
+  .signup-step-account__container {
+    @include column--without-gutter(5);
+  }
+}

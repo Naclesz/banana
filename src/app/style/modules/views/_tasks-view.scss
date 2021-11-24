@@ -1,0 +1,278 @@
+$task-view-separators: $main-separator-components;
+$task-view-sepatators-tabs: $padding-card-default-vertical;
+$task-view-no-tasks-margin: $separator-xxxxl;
+$task-view-title-padding: $separator-s;
+$task-view-list-calendar-width: 290px;
+$task-view-list-course-width: 338px;
+$task-view-list-course-padding: 10px;
+$task-view-active-color: $color-first;
+$task-view-inactive-tab-color: $color-gray-10;
+$task-view-title-bar-color: $color-gray-08;
+$task-view-course-level-color: $color-gray-11;
+$task-view-course-selector-list-padding: $separator-s;
+$task-view-course-selector-option-padding: $separator-s $separator-xs;
+$task-view-course-selector-text-color: $color-gray-11;
+$task-view-course-selector-hover-color: $color-gray-13;
+$task-view-course-selector-border-radius: $border-radius-05;
+
+.task-view {
+  .layout-calendar__column-1 {
+    padding-right: 0;
+  }
+}
+
+.task-view__right {
+  @extend .grid;
+}
+
+.task-view__item {
+  margin-bottom: $task-view-separators;
+}
+
+.task-view__center--column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.task-view__item--list-calendars {
+  margin-top: $separator-xxxxxl;
+}
+
+.task-view__item--title,
+.task-view__item--list-calendars {
+  width: $task-view-list-calendar-width;
+  .card-generic {
+    width: 100%;
+  }
+}
+
+.task-view__tab-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.task-view__list-wrapper {
+  margin-top: $task-view-no-tasks-margin;
+}
+
+.task-view__no-tasks {
+  margin-top: $task-view-no-tasks-margin;
+}
+
+.task-view__course-selector-wrapper {
+  @extend .padding-default-rigth;
+
+  display: flex;
+}
+
+.task-view__course-selector {
+  width: $task-view-list-course-width;
+
+  .select-customizable__menu-list {
+    padding: $task-view-course-selector-list-padding;
+  }
+  .select-customizable__option {
+    border-radius: 8px;
+    padding: $task-view-course-selector-list-padding;
+    color: $task-view-course-selector-text-color !important;
+
+    &:hover {
+      background: $task-view-course-selector-hover-color !important;
+    }
+  }
+
+  .select-customizable__control,
+  .select-customizable__menu {
+    border-radius: $task-view-course-selector-border-radius !important;
+  }
+}
+
+.task-view__types {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: $task-view-no-tasks-margin;
+}
+
+.task-view__types-container {
+  width: 100%;
+}
+
+.task-view__title-wrapper {
+  width: 50%;
+  border-bottom: 1px solid $task-view-title-bar-color;
+  padding-bottom: $task-view-title-padding;
+}
+
+.task-view__title {
+  @extend .title-h5;
+}
+
+.task-view__student {
+  .task-view__list-wrapper {
+    margin-top: $separator-xxl;
+  }
+
+  .task-view__right {
+    padding: 0;
+  }
+
+  .select-customizable .select-customizable__control {
+    height: 55px;
+  }
+}
+
+.task-view__course-entry {
+  display: flex;
+  align-items: center;
+}
+
+.task-view__course-level {
+  @extend .text-small;
+
+  color: $task-view-course-level-color;
+  margin-left: $task-view-list-course-padding;
+}
+
+.task-view__course-name {
+  @extend .text-smallest-bold;
+
+  margin-left: $task-view-list-course-padding;
+}
+
+@media #{$breakpoints-large} {
+  .task-view__right {
+    padding: 0 $task-view-no-tasks-margin;
+  }
+}
+
+// Responsive
+
+.task-view {
+  .task-view__mobile-menu-header {
+    height: 48px;
+    background: linear-gradient(111.12deg, #ff5029 12.58%, #f91b6b 100%);
+    width: 100%;
+    z-index: 9997;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+
+    .task-view__mobile-menu-header-title {
+      @extend .title-h5;
+      color: $color-white;
+    }
+    .task-view__mobile-menu-header-button {
+      cursor: pointer;
+    }
+  }
+
+  .task-view__mobile-menu-backdrop {
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(0, 0, 0);
+    top: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 9997;
+  }
+
+  .layout-calendar__column-1 {
+    width: 378px;
+    right: -378px;
+    left: unset;
+    top: 0;
+    padding-top: 20px;
+    z-index: 9998;
+    transition: right 0.3s ease-in-out;
+
+    .back-button {
+      display: none;
+    }
+
+    .task-view__item--title {
+      display: none;
+    }
+
+    .task-view__mobile-menu-close-button {
+      text-align: right;
+      padding-right: 20px;
+      .icon {
+        cursor: pointer;
+      }
+    }
+
+    .task-view__item--list-calendars {
+      margin-top: 0;
+    }
+  }
+
+  .layout-calendar__column-2 {
+    padding-left: 28px;
+    margin-top: 64px;
+  }
+
+  &.task-view__mobile-menu--open {
+    .layout-calendar__column-1 {
+      right: 0;
+      transition: right 0.3s ease-in-out;
+    }
+    .task-view__mobile-menu-backdrop {
+      display: block;
+      opacity: 0.25;
+    }
+  }
+}
+
+@media #{$breakpoints-xlarge} {
+  .task-view {
+    .task-view__mobile-menu-header {
+      display: none;
+    }
+    .task-view__mobile-menu-backdrop {
+      display: none;
+    }
+
+    .layout-calendar__column-1 {
+      background: #faf7f5;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: unset;
+      width: 450px;
+      .back-button {
+        display: block;
+      }
+      .task-view__item--title {
+        display: block;
+      }
+      .task-view__mobile-menu-close-button {
+        display: none;
+      }
+      .task-view__item--list-calendars {
+        margin-top: 50px;
+      }
+    }
+
+    .layout-calendar__column-2 {
+      padding-top: 20px;
+      padding-left: calc(450px + 20px);
+      padding-bottom: 20px;
+      width: 100%;
+    }
+
+    .task-view__tab-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

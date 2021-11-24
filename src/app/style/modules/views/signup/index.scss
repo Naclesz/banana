@@ -1,0 +1,90 @@
+$signup-color-title: $color-title;
+$signup-color-second: $color-gray-10;
+$signup-logo-separator: $separator-xxxxl;
+$signup-logo-left: -14px;
+$signup-items-separator: $main-separator-components;
+$signup-content-step-max-width: 500px;
+
+.signup {
+  .layout-progress__footer-container {
+    box-shadow: 0;
+  }
+}
+.signup__header {
+  @extend .title-h3;
+
+  display: flex;
+}
+
+.signup__titlepart1 {
+  color: $signup-color-second;
+}
+
+.signup__titlepart2 {
+  color: $signup-color-title;
+}
+
+.signup__description {
+  @extend .text-small;
+
+  color: $signup-color-second;
+}
+
+.signup__step {
+  display: flex;
+  height: 100%;
+}
+
+.signup__column1 {
+  @include column--without-gutter(12);
+  @extend .grid-lateral;
+}
+
+.signup__column2 {
+  display: none;
+}
+
+.signup__logo {
+  left: $signup-logo-left;
+  margin-bottom: $signup-logo-separator;
+  margin-top: $signup-logo-separator;
+  position: relative;
+}
+
+.signup__image {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.signup__item {
+  margin-top: $signup-items-separator;
+}
+
+.signup__step-content {
+  max-width: $signup-content-step-max-width;
+}
+
+@media #{$breakpoints-medium} {
+  .signup__column1 {
+    @include column--without-gutter(7);
+  }
+
+  .signup__column2 {
+    @include column--without-gutter(5);
+
+    display: block;
+  }
+}
+
+@media #{$breakpoints-large} {
+  .signup__column1 {
+    @include column--without-gutter(6);
+  }
+
+  .signup__column2 {
+    @include column--without-gutter(6);
+  }
+}

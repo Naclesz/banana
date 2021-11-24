@@ -1,0 +1,68 @@
+$new-assessment-view-description-color: $color-title;
+$new-assessment-view-separator-items: $main-separator-items;
+$new-assessment-view-separator-metas: $main-separator-components;
+$new-assessment-view-separator-bubble: $padding-card-default-horizontal;
+$new-assessment-view-separator-icon-metas: $main-separator-items;
+$new-assessment-view-separator-title: $main-separator-items;
+$new-assessment-view-meta-icon-background: $color-gray-12;
+$new-assessment-view-meta-icon-padding: $separator-s;
+
+.new-assessment-view-header {
+  @extend .card-secondary;
+}
+
+.new-assessment-view-header__bubble {
+}
+
+.new-assessment-view-header__layout {
+  display: flex;
+}
+
+.new-assessment-view-header__header-title {
+  @extend .title-h4;
+
+  display: block;
+  margin-top: $new-assessment-view-separator-title;
+}
+
+.new-assessment-view-header__layout-right {
+  flex: 1 1 auto;
+
+  padding-left: $new-assessment-view-separator-bubble;
+}
+
+.new-assessment-view-header__layout-right-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.new-assessment-view-header__description {
+  @extend .text-small;
+
+  color: $new-assessment-view-description-color;
+  display: block;
+  line-height: 1.67;
+  margin-top: $new-assessment-view-separator-items;
+}
+
+.new-assessment-view-header__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: $new-assessment-view-separator-metas;
+
+  .learning-objectives-tag-list-and-create__title {
+    padding: $main-separator-items 0;
+  }
+}
+
+.new-assessment-view-header__metas {
+  display: flex;
+  align-items: center;
+}
+
+.new-assessment-view-header__meta {
+  margin-right: $new-assessment-view-separator-metas;
+}

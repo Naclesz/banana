@@ -1,0 +1,51 @@
+$signup-step-license-separator-input: $main-separator-components;
+$signup-step-license-separator-list: $main-separator-components;
+$signup-step-license-separator-list-title: $main-separator-items;
+$signup-step-license-background-colum-2: #f9f8e1;
+
+.signup-step-license {
+  input[type='date']::-webkit-inner-spin-button,
+  input[type='date']::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+.signup-step-license--with-licenses {
+  .signup__column2 {
+    background: $signup-step-license-background-colum-2 !important;
+  }
+}
+
+.signup-step-license__column1 {
+  @include column--without-gutter(12);
+}
+
+.signup-step-license__header {
+  @extend .title-h3;
+
+  display: flex;
+}
+
+.signup-step-license__form {
+  margin-top: $signup-step-license-separator-input;
+}
+
+.signup-step-license__licenses {
+  max-height: 54vh;
+  overflow-y: auto;
+  margin-top: $signup-step-license-separator-list;
+}
+
+.signup-step-license__licenses-length {
+  @extend .title-h6;
+
+  display: block;
+  margin-bottom: $signup-step-license-separator-list-title;
+}
+
+@media #{$breakpoints-large} {
+  .signup-step-license__column1 {
+    @include column--without-gutter(5);
+  }
+}

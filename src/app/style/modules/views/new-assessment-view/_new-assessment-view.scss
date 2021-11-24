@@ -1,0 +1,32 @@
+$new-assessment-view-questions-separator: $main-separator-components;
+$new-assessment-view-questions_max-width: 856px;
+
+.new-assessment-view__container {
+  max-width: $new-assessment-view-questions_max-width;
+  margin: auto;
+}
+
+.new-assessment-view__questions {
+  margin-top: $new-assessment-view-questions-separator;
+}
+
+.new-assessment-view__questions__fixed-button-container {
+  @extend .grid;
+  @extend .margin-default;
+
+  position: relative;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.new-assessment-view__questions__fixed-button {
+  position: absolute;
+  width: $size-icon-bubble-l;
+  right: 0;
+
+  .button-fixed-dropdown {
+    position: fixed;
+  }
+}

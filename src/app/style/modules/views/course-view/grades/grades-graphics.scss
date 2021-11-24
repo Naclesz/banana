@@ -1,0 +1,85 @@
+$grades-graphic-text-separator: $main-separator-items;
+$grades-graphic-separator: $main-separator-components;
+$grades-graphic-ranking-bar-padding: 80px $separator-xxxxl 40px;
+$grades-graphic-analysis-separator: $separator-xxxxl;
+$grades-graphic-avatars-separator: $main-separator-components;
+$grades-graphic-legend-item-width: 6px;
+$grades-graphic-legend-item-height: 4px;
+$grades-graphic-legend-item-separator: $separator-xs;
+$grades-graphic-legend-item-title-separator: $main-separator-items;
+$grades-graphic-legend-item-title-separator: $main-separator-items;
+$grades-graphic-legend-background: $color-first;
+$grades-graphic-legend-text-color: $color-label;
+$grades-graphic-analysis-card-padding-bottom: 60px;
+.grades-graphic__title {
+  @extend .grades__title;
+}
+
+.grades-graphic__text {
+  @extend .grades__text;
+
+  margin-top: $grades-graphic-text-separator;
+}
+
+.grades-graphic__ranking-bar {
+  @extend .card-secondary;
+  @extend .border-default;
+
+  padding: $grades-graphic-ranking-bar-padding !important;
+  margin-top: $grades-graphic-separator;
+}
+
+.grades-graphic__analysis-container {
+  margin-top: $grades-graphic-analysis-separator;
+}
+
+.grades-graphic__tabs {
+  margin-top: $grades-graphic-separator;
+}
+
+.grades-graphic__list-users {
+  display: flex;
+  align-items: center;
+}
+
+.grades-graphic__analysis-card {
+  @extend .card-secondary;
+
+  margin-top: $grades-graphic-separator;
+  padding-bottom: $grades-graphic-analysis-card-padding-bottom !important;
+  overflow: hidden;
+}
+
+.grades-graphic__analysis-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grades-graphic__legend-item {
+  height: $grades-graphic-legend-item-height;
+  width: $grades-graphic-legend-item-width;
+  background: $grades-graphic-legend-background;
+  margin-right: $grades-graphic-legend-item-separator;
+}
+
+.grades-graphic__legend {
+  display: flex;
+  align-items: center;
+}
+
+.grades-graphic__legend-text {
+  @extend .text-smallest;
+
+  color: $grades-graphic-legend-text-color;
+  display: block;
+  margin-left: $grades-graphic-legend-item-title-separator;
+}
+
+.grades-graphic__avatar-container {
+  margin-right: $grades-graphic-avatars-separator;
+}
+
+.grades-graphic__linear-graphic {
+  margin-top: $grades-graphic-separator;
+}

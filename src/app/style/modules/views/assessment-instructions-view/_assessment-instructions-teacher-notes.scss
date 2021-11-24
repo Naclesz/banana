@@ -1,0 +1,65 @@
+$assessment-instructions-teacher-notes-padding: $separator-xxl;
+$assessment-instructions-teacher-notes-title-margin: 18px;
+$assessment-instructions-teacher-notes-text-margin-left: 42px;
+$assessment-instructions-teacher-notes-text-margin-right: 90px;
+$assessment-instructions-teacher-notes-border-radius: $border-radius-02;
+$assessment-instructions-teacher-notes-border-color: $color-blue-04;
+$assessment-instructions-teacher-notes-background: $color-blue-02;
+$assessment-instructions-teacher-notes-text-color: $color-gray-11;
+
+.assessment-instructions-teacher-notes {
+  padding: $assessment-instructions-teacher-notes-padding;
+  border-radius: $assessment-instructions-teacher-notes-border-radius;
+  border: 1px solid $assessment-instructions-teacher-notes-border-color;
+  background: $assessment-instructions-teacher-notes-background;
+}
+
+.assessment-instructions-teacher-notes__header {
+  @extend .hover-basic;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assessment-instructions-teacher-notes__header-left {
+  display: flex;
+  align-items: center;
+}
+
+.assessment-instructions-teacher-notes__title {
+  @extend .title-h6;
+
+  margin-left: $assessment-instructions-teacher-notes-title-margin;
+  color: $assessment-instructions-teacher-notes-text-color;
+}
+
+.assessment-instructions-teacher-notes__text {
+  @extend .text-small;
+
+  line-height: 24px !important;
+  margin-top: $assessment-instructions-teacher-notes-padding;
+  margin-left: $assessment-instructions-teacher-notes-text-margin-left;
+  margin-right: $assessment-instructions-teacher-notes-text-margin-right;
+  color: $assessment-instructions-teacher-notes-text-color;
+
+  /*transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.26s ease;*/
+}
+
+.assessment-instructions-teacher-notes__text--hidden {
+  display: none;
+  /*visibility: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out, visibility 0.5s;*/
+}
+.assessment-instructions-teacher-notes__text--visible {
+  display: block;
+  /*visibility: visible;
+  max-height: 200px;
+  overflow-y: auto;
+  transition: max-height 0.5s ease-in;*/
+
+  //transform: scaleY(1);
+}

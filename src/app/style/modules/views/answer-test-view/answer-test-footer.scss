@@ -1,0 +1,66 @@
+$answer-test-footer-padding: 100px;
+$answer-test-footer-page-formative-background: $color-gray-12;
+$answer-test-footer-page-formative-color: $color-title;
+
+.answer-test-footer {
+  @extend .padding-default;
+
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.answer-test-footer__button {
+  flex: 0 0 auto;
+  width: 20%;
+}
+
+.answer-test-footer__paginator {
+  flex: 1 1 auto;
+  text-align: center;
+  //margin: 0 $answer-test-footer-padding;
+  width: 100%;
+}
+
+.answer-test-footer__button--next {
+  width: 20%;
+  text-align: right;
+
+  .button {
+    padding-left: 0;
+  }
+
+  .button__text {
+    padding-left: $separator-m !important;
+  }
+
+  .icon--color-default.icon--lib-skin path {
+    fill: #ffffff;
+  }
+}
+
+.answer-test-footer__paginator-formative {
+  background: $answer-test-footer-page-formative-background;
+  border-radius: $border-radius-06;
+  color: $answer-test-footer-page-formative-color;
+  padding: $separator-xs $separator-xxl;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-test-footer__paginator-formative-steps-index,
+.answer-test-footer__paginator-formative-separator,
+.answer-test-footer__paginator-formative-steps-length {
+  @extend .title-h5;
+}
+
+.answer-test-footer__paginator-formative-separator {
+  margin: 0 $separator-xs;
+}
+
+.answer-test-footer__paginator-formative-separator,
+.answer-test-footer__paginator-formative-steps-length {
+  color: $color-gray-09;
+}

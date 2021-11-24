@@ -1,0 +1,21 @@
+$assessment-result-left-skeleton-rows-height: 45px;
+$assessment-result-left-skeleton-rows-margin: $separator-l;
+$assessment-result-right-skeleton-attention-height: 160px;
+$assessment-result-right-skeleton-attention-margin: $separator-xxl;
+$assessment-result-right-skeleton-graph-height: 400px;
+$skeleton-stream-entry-height: 143px;
+
+.assessment-result-left-skeleton {
+  height: $assessment-result-left-skeleton-rows-height;
+  margin-bottom: $assessment-result-left-skeleton-rows-margin;
+  width: 95% !important;
+}
+
+.assessment-result-right-skeleton__attention-card {
+  height: $assessment-result-right-skeleton-attention-height;
+  margin-bottom: $assessment-result-right-skeleton-attention-margin;
+}
+
+.assessment-result-right-skeleton__graph {
+  height: $assessment-result-right-skeleton-graph-height;
+}

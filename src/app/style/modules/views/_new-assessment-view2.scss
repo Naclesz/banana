@@ -1,0 +1,85 @@
+// $new-assessment-view-list-profile-width: 265px;
+// $new-assessment-view-text-separator: $main-separator-items;
+// $new-assessment-view-text-color: $color-title;
+// $new-assessment-view-height-section-learning: 100px;
+// $new-assessment-view-separators: $main-separator-components;
+
+// .new-assessment-view {
+//   .layout-calendar__column-1 {
+//     height: 100vh;
+//   }
+
+//   .assessment-detail-form {
+//     padding-right: $new-assessment-view-separators;
+//   }
+// }
+
+// .new-assessment-view__item {
+//   margin-bottom: $new-assessment-view-separators;
+// }
+
+// .new-assessment-view__left {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-direction: column;
+// }
+
+// .new-assessment-view__left-container {
+//   height: calc(100vh - #{$new-assessment-view-height-section-learning});
+//   overflow-y: auto;
+//   padding-bottom: $new-assessment-view-separators;
+// }
+
+// .new-assessment-view__item--title {
+//   width: $new-assessment-view-list-profile-width;
+// }
+
+// .new-assessment-view__center-column {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+// }
+
+// .new-assessment-view__options {
+//   width: 100%;
+// }
+
+// .new-assessment-view__section {
+//   @include column(6);
+
+//   margin-left: 0;
+// }
+
+// .new-assessment-view-licenses__header {
+//   @extend .grid-column;
+// }
+
+// .new-assessment-view-licenses__header-title {
+//   @include column(6);
+// }
+
+// .new-assessment-view-licenses__header-action {
+//   @include column(6);
+
+//   justify-content: flex-end;
+//   display: flex;
+// }
+
+// .new-assessment-view__list {
+//   margin-top: $new-assessment-view-separators;
+// }
+
+// .new-assessment-view-devices__text {
+//   @extend .text-smallest;
+
+//   color: $new-assessment-view-text-color;
+//   display: block;
+//   margin-top: $new-assessment-view-text-separator;
+// }
+
+// @media #{$breakpoints-xlarge} {
+//   .toolbar__left,
+//   .toolbar__right {
+//     flex-direction: row;
+//   }
+// }

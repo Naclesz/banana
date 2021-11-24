@@ -1,0 +1,98 @@
+$grades-attendance-text-separator: $main-separator-items;
+$grades-attendance-content-separator: $main-separator-components;
+
+.grades-attendance {
+  display: flex;
+  flex-direction: column;
+}
+
+.grades-attendance__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex: 0 0 auto;
+}
+
+.grades-attendance__title {
+  @extend .grades__title;
+}
+
+.grades-attendance__text {
+  @extend .grades__text;
+
+  margin-top: $grades-attendance-text-separator;
+}
+
+.grades-attendance__export-container {
+  display: flex;
+  align-items: center;
+}
+
+.grades-attendance__content {
+  margin-top: $grades-attendance-content-separator;
+}
+
+.grades-attendance__image {
+  img {
+    max-width: 100%;
+  }
+}
+
+.grades-attendance__list {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+}
+
+.grades-attendance__text-present {
+  @extend .grades__text;
+  margin-top: $main-separator-components;
+  margin-bottom: $main-separator-components;
+}
+
+.attendance-student-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  width: 136px;
+  height: 128px;
+  background: #ffffff;
+  border: 1px solid #eee4dc;
+  box-sizing: border-box;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+
+  .attendance-student-card__absent-icon {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+  }
+
+  .attendance-student-card__avatar {
+  }
+
+  .attendance-student-card__name {
+    font-family: 'Lato Bold';
+    font-size: $font-size-09;
+    line-height: 20px;
+    text-align: center;
+    color: $color-gray-11;
+    margin-top: $separator-s;
+  }
+
+  &.attendance-student-card--selected {
+    background-color: #f3eeea;
+    box-shadow: inset 2px 2px 4px rgba(10, 6, 5, 0.1);
+    .attendance-student-card__name {
+      color: $color-gray-10;
+    }
+  }
+
+  &.attendance-student-card--disabled {
+    pointer-events: none;
+  }
+}

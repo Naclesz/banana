@@ -1,0 +1,61 @@
+$new-assesment-view-questions_title-color: $color-title;
+$new-assesment-view-questions_separator: $separator-xxxxl;
+$new-assesment-view-questions_buttons-separator: $main-separator-items;
+
+.new-assesment-view-questions__length {
+  @extend .title-h5;
+
+  color: $new-assesment-view-questions_title-color;
+}
+
+.new-assesment-view-questions__empty {
+  margin: auto;
+  text-align: center;
+
+  margin-top: $new-assesment-view-questions_separator;
+  position: relative;
+}
+
+.new-assesment-view-questions__explain-bottom {
+  position: absolute;
+  transform: translate(-50%);
+  left: calc(50% + 114px);
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-assesment-view-questions__empty-title {
+  @extend .title-h5;
+
+  color: $new-assesment-view-questions_title-color;
+  position: absolute;
+
+  white-space: nowrap;
+
+  margin-top: 30px;
+  margin-left: 46px;
+}
+
+.new-assesment-view-questions {
+  .lemo-question-controls {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
+  .lemo-question-controls,
+  .lemo-send-controls {
+    width: 100%;
+  }
+
+  .lemonade-exercises {
+    .lemo-controls {
+      display: none;
+    }
+    // TODO: after removing controls wrapper in lemonade this style fix is no longer needed to hide the controls buttons wrapper
+    .lemo-controls-wrapper,
+    .lemo-hints-dialog {
+      display: none !important;
+    }
+  }
+}

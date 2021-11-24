@@ -1,0 +1,92 @@
+.auth-view__form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
+}
+
+.auth-view__form-content {
+  width: 100%;
+}
+
+.auth-view__image {
+  width: 100%;
+  height: 100%;
+
+  .image-gradient {
+    background-image: url(/static/media/ipad.fd78a32a.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .image-gradient__gradient {
+    background-image: none;
+  }
+}
+
+$loading-simple-color: $color-gray-03;
+$loading-simple-size: 60px;
+$loading-title-margin: 24px;
+
+.loading-simple {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  padding: $gutter;
+  padding: 20vh 0;
+}
+
+.loading-simple__loop {
+  display: inline-block;
+  position: relative;
+  width: $loading-simple-size;
+  height: $loading-simple-size;
+  margin-left: -24px;
+}
+
+.loading-simple__title {
+  color: $loading-simple-color;
+  display: block;
+  font-family: $font-family-first;
+  font-size: 24px;
+  flex: 0 1 100%;
+  margin-top: 48px;
+  text-align: center;
+  width: 100%;
+}
+
+.loading-simple__loop div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 4px;
+  border: 4px solid $loading-simple-color;
+  border-radius: 50%;
+  animation: loading-simple__loop 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $loading-simple-color transparent transparent transparent;
+}
+
+.loading-simple__loop div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.loading-simple__loop div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.loading-simple__loop div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes loading-simple__loop {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
